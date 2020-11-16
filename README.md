@@ -1,2 +1,2 @@
-# food-expanation-ontology.github.io
+# Food Explanation Ontology
 Ontology for generating Food Related Explanations
