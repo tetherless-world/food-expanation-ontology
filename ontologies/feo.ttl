@@ -1,0 +1,878 @@
+@prefix : <http://purl.org/heals/food-explanation-ontology/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix eo: <http://purl.org/heals/eo/> .
+@prefix feo: <http://purl.org/heals/food-explanation-ontology/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix cito: <http://purl.org/spar/cito/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix food: <http://purl.org/heals/food/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix terms: <http://purl.org/dc/terms/> .
+@prefix prov-o: <http://www.w3.org/TR/prov-o/> .
+@prefix schema: <http://schema.org/> .
+@prefix protege: <http://protege.stanford.edu/plugins/owl/protege#> .
+@prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#> .
+@prefix resource: <http://semanticscience.org/resource/> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@prefix SpecificationMetadata: <http://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@prefix SpecificationMetadata1: <https://www.omg.org/techprocess/ab/SpecificationMetadata/> .
+@base <http://purl.org/heals/food-explanation-ontology/> .
+
+<http://purl.org/heals/food-explanation-ontology/> rdf:type owl:Ontology ;
+                                                    owl:imports food: ,
+                                                                <https://purl.org/heals/eo/1.0.0> ;
+                                                    rdfs:label "Food Explanation Ontology" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/heals/food-explanation-ontology/accomplishedGoal
+feo:accomplishedGoal rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/allowedBy
+feo:allowedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf feo:allows .
+
+
+###  http://purl.org/heals/food-explanation-ontology/allows
+feo:allows rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf feo:isCharacteristicOf ,
+                              feo:isSupportedBy ;
+           owl:propertyDisjointWith food:forbids .
+
+
+###  http://purl.org/heals/food-explanation-ontology/dislikedBy
+feo:dislikedBy rdf:type owl:ObjectProperty ;
+               owl:inverseOf food:dislikes ;
+               rdfs:domain food:Food ;
+               rdfs:range <https://purl.org/heals/eo#user> .
+
+
+###  http://purl.org/heals/food-explanation-ontology/forbiddenBy
+feo:forbiddenBy rdf:type owl:ObjectProperty ;
+                owl:inverseOf food:forbids .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasCharacteristic
+feo:hasCharacteristic rdf:type owl:ObjectProperty ;
+                      owl:inverseOf feo:isCharacteristicOf ;
+                      rdf:type owl:TransitiveProperty ;
+                      rdfs:range feo:Characteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasDiet
+feo:hasDiet rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasExplanationType
+feo:hasExplanationType rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasGoal
+feo:hasGoal rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasNutrient
+feo:hasNutrient rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf feo:hasCharacteristic ;
+                rdfs:range feo:NutrientMeasurement .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasParameter
+feo:hasParameter rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf feo:hasCharacteristic ;
+                 rdfs:range feo:Parameter .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasPrimaryParameter
+feo:hasPrimaryParameter rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf feo:hasParameter .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasSecondaryParameter
+feo:hasSecondaryParameter rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf feo:hasParameter .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasSupportFor
+feo:hasSupportFor rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/isAbout
+feo:isAbout rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/isAccomplishedBy
+feo:isAccomplishedBy rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/isAllergenFor
+feo:isAllergenFor rdf:type owl:ObjectProperty ;
+                  owl:inverseOf food:isAllergicTo ;
+                  rdfs:domain food:Food ;
+                  rdfs:range <https://purl.org/heals/eo#user> .
+
+
+###  http://purl.org/heals/food-explanation-ontology/isAvailibleIn
+feo:isAvailibleIn rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf feo:hasCharacteristic ,
+                                     feo:isSupportedBy .
+
+
+###  http://purl.org/heals/food-explanation-ontology/isCharacteristicOf
+feo:isCharacteristicOf rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/isInSeason
+feo:isInSeason rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/isOpposedBy
+feo:isOpposedBy rdf:type owl:ObjectProperty ,
+                         owl:TransitiveProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/isParameterOfType
+feo:isParameterOfType rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/isSupportedBy
+feo:isSupportedBy rdf:type owl:ObjectProperty ,
+                           owl:TransitiveProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/likedBy
+feo:likedBy rdf:type owl:ObjectProperty ;
+            owl:inverseOf feo:likes ;
+            rdfs:domain food:Food ;
+            rdfs:range <https://purl.org/heals/eo#user> .
+
+
+###  http://purl.org/heals/food-explanation-ontology/likes
+feo:likes rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf feo:isSupportedBy ;
+          rdfs:domain <https://purl.org/heals/eo#user> ;
+          rdfs:label "likes" .
+
+
+###  http://purl.org/heals/food/dislikes
+food:dislikes rdfs:subPropertyOf feo:isOpposedBy ;
+              rdfs:domain <https://purl.org/heals/eo#user> .
+
+
+###  http://purl.org/heals/food/forbids
+food:forbids rdfs:subPropertyOf feo:isCharacteristicOf ,
+                                feo:isOpposedBy .
+
+
+###  http://purl.org/heals/food/hasIngredient
+food:hasIngredient rdfs:subPropertyOf feo:hasCharacteristic ,
+                                      feo:isSupportedBy ;
+                   rdfs:range food:Ingredient .
+
+
+###  http://purl.org/heals/food/isAllergicTo
+food:isAllergicTo rdfs:subPropertyOf feo:isOpposedBy ;
+                  rdf:type owl:FunctionalProperty .
+
+
+###  http://semanticscience.org/resource/SIO_000061
+resource:SIO_000061 rdf:type owl:ObjectProperty .
+
+
+###  http://semanticscience.org/resource/SIO_000145
+resource:SIO_000145 rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/heals/food-explanation-ontology/hasCalories
+feo:hasCalories rdf:type owl:DatatypeProperty ;
+                rdfs:domain feo:Characteristic ;
+                rdfs:range xsd:int .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasCarbohydrateValue
+feo:hasCarbohydrateValue rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf feo:hasNutrientValue .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasFatValue
+feo:hasFatValue rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf feo:hasNutrientValue .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasGrams
+feo:hasGrams rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasNutrientValue
+feo:hasNutrientValue rdf:type owl:DatatypeProperty ;
+                     rdfs:domain feo:Characteristic ;
+                     rdfs:range xsd:int .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasProteinValue
+feo:hasProteinValue rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf feo:hasNutrientValue .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasSodiumValue
+feo:hasSodiumValue rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf feo:hasNutrientValue .
+
+
+###  http://purl.org/heals/food-explanation-ontology/hasSugarValue
+feo:hasSugarValue rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf feo:hasNutrientValue .
+
+
+###  http://purl.org/heals/food-explanation-ontology/isInternal
+feo:isInternal rdf:type owl:DatatypeProperty ;
+               rdfs:range xsd:boolean .
+
+
+###  http://purl.org/heals/food-explanation-ontology/isSupportive
+feo:isSupportive rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:boolean .
+
+
+###  http://purl.org/heals/food-explanation-ontology/requiresFact
+feo:requiresFact rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:boolean .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.obolibrary.org/obo/FOODON_03400645
+obo:FOODON_03400645 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VeganDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400648
+obo:FOODON_03400648 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VeganDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400656
+obo:FOODON_03400656 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400657
+obo:FOODON_03400657 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400658
+obo:FOODON_03400658 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400664
+obo:FOODON_03400664 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400737
+obo:FOODON_03400737 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:PescatarianDiet
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400738
+obo:FOODON_03400738 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:PescatarianDiet
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400739
+obo:FOODON_03400739 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:PescatarianDiet
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400741
+obo:FOODON_03400741 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:PescatarianDiet
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400742
+obo:FOODON_03400742 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:PescatarianDiet
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400743
+obo:FOODON_03400743 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:PescatarianDiet
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400771
+obo:FOODON_03400771 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.obolibrary.org/obo/FOODON_03400772
+obo:FOODON_03400772 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:PescatarianDiet
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:forbiddenBy ;
+                                      owl:hasValue feo:VegetarianDiet
+                                    ] .
+
+
+###  http://purl.org/heals/food-explanation-ontology/AggregateData
+feo:AggregateData rdf:type owl:Class ;
+                  rdfs:subClassOf resource:SIO_000052 .
+
+
+###  http://purl.org/heals/food-explanation-ontology/AllergicFoodCharacteristic
+feo:AllergicFoodCharacteristic rdf:type owl:Class ;
+                               owl:equivalentClass feo:Allergies ;
+                               rdfs:subClassOf feo:UserCharacteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Allergies
+feo:Allergies rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( food:Food
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty feo:isAllergenFor ;
+                                                           owl:someValuesFrom <https://purl.org/heals/eo#user>
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf feo:FoodPreferences ;
+              rdfs:label "allergies" .
+
+
+###  http://purl.org/heals/food-explanation-ontology/AllowedFoodCharacteristic
+feo:AllowedFoodCharacteristic rdf:type owl:Class ;
+                              owl:equivalentClass [ owl:intersectionOf ( food:Food
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty feo:allowedBy ;
+                                                                           owl:someValuesFrom <https://purl.org/heals/eo#user>
+                                                                         ]
+                                                                       ) ;
+                                                    rdf:type owl:Class
+                                                  ] ;
+                              rdfs:subClassOf feo:UserCharacteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Calorie
+feo:Calorie rdf:type owl:Class ;
+            rdfs:subClassOf feo:NutrientMeasurement ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty feo:hasCalories ;
+                              owl:someValuesFrom xsd:int
+                            ] .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Carbohydrate
+feo:Carbohydrate rdf:type owl:Class ;
+                 rdfs:subClassOf feo:NutrientMeasurement .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Characteristic
+feo:Characteristic rdf:type owl:Class .
+
+
+###  http://purl.org/heals/food-explanation-ontology/DateInSystem
+feo:DateInSystem rdf:type owl:Class ;
+                 rdfs:subClassOf resource:SIO_000418 .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Diet
+feo:Diet rdf:type owl:Class .
+
+
+###  http://purl.org/heals/food-explanation-ontology/DislikeFoodCharacteristic
+feo:DislikeFoodCharacteristic rdf:type owl:Class ;
+                              owl:equivalentClass feo:DislikedFoods ;
+                              rdfs:subClassOf feo:UserCharacteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/DislikedFoods
+feo:DislikedFoods rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( food:Food
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty feo:dislikedBy ;
+                                                               owl:someValuesFrom <https://purl.org/heals/eo#user>
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf feo:FoodPreferences ;
+                  rdfs:label "disliked foods" .
+
+
+###  http://purl.org/heals/food-explanation-ontology/DriedFishProduct
+feo:DriedFishProduct rdf:type owl:Class ;
+                     rdfs:subClassOf obo:FOODON_03400769 ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty feo:forbiddenBy ;
+                                       owl:hasValue feo:PescatarianDiet
+                                     ] .
+
+
+###  http://purl.org/heals/food-explanation-ontology/DriedMeatProduct
+feo:DriedMeatProduct rdf:type owl:Class ;
+                     rdfs:subClassOf obo:FOODON_03400769 .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Fat
+feo:Fat rdf:type owl:Class ;
+        rdfs:subClassOf feo:NutrientMeasurement .
+
+
+###  http://purl.org/heals/food-explanation-ontology/FoodPreferences
+feo:FoodPreferences rdf:type owl:Class ;
+                    rdfs:label "food preferences" .
+
+
+###  http://purl.org/heals/food-explanation-ontology/ForbiddenFoodCharacteristic
+feo:ForbiddenFoodCharacteristic rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( food:Food
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty feo:forbiddenBy ;
+                                                                             owl:someValuesFrom <https://purl.org/heals/eo#user>
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
+                                rdfs:subClassOf feo:UserCharacteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Goal
+feo:Goal rdf:type owl:Class ;
+         rdfs:label "goal" .
+
+
+###  http://purl.org/heals/food-explanation-ontology/GoalCharacteristic
+feo:GoalCharacteristic rdf:type owl:Class ;
+                       rdfs:subClassOf feo:Characteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/LikedByFact
+feo:LikedByFact rdf:type owl:Class ;
+                rdfs:subClassOf <https://purl.org/heals/eo#Fact> .
+
+
+###  http://purl.org/heals/food-explanation-ontology/LikedFoodCharacteristic
+feo:LikedFoodCharacteristic rdf:type owl:Class ;
+                            rdfs:subClassOf feo:UserCharacteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/LikedFoods
+feo:LikedFoods rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( food:Food
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty feo:likedBy ;
+                                                            owl:someValuesFrom <https://purl.org/heals/eo#user>
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:subClassOf feo:FoodPreferences ;
+               rdfs:label "liked foods" .
+
+
+###  http://purl.org/heals/food-explanation-ontology/LocationCharacteristic
+feo:LocationCharacteristic rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( resource:SIO_000414
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty resource:SIO_000145 ;
+                                                                        owl:someValuesFrom feo:System
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf feo:SystemCharacteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/LowerCholestrol
+feo:LowerCholestrol rdf:type owl:Class ;
+                    rdfs:subClassOf feo:Goal .
+
+
+###  http://purl.org/heals/food-explanation-ontology/NutrientMeasurement
+feo:NutrientMeasurement rdf:type owl:Class ;
+                        rdfs:subClassOf food:Measurement .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Parameter
+feo:Parameter rdf:type owl:Class ;
+              rdfs:subClassOf feo:Characteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Protien
+feo:Protien rdf:type owl:Class ;
+            rdfs:subClassOf feo:NutrientMeasurement .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Season
+feo:Season rdf:type owl:Class ;
+           rdfs:subClassOf resource:SIO_000417 ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty feo:isInternal ;
+                             owl:hasValue "false"^^xsd:boolean
+                           ] .
+
+
+###  http://purl.org/heals/food-explanation-ontology/SeasonCharacteristic
+feo:SeasonCharacteristic rdf:type owl:Class ;
+                         owl:equivalentClass [ owl:intersectionOf ( feo:Season
+                                                                    [ rdf:type owl:Restriction ;
+                                                                      owl:onProperty resource:SIO_000668 ;
+                                                                      owl:someValuesFrom feo:System
+                                                                    ]
+                                                                  ) ;
+                                               rdf:type owl:Class
+                                             ] ;
+                         rdfs:subClassOf feo:SystemCharacteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Sodium
+feo:Sodium rdf:type owl:Class ;
+           rdfs:subClassOf feo:NutrientMeasurement .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Sugar
+feo:Sugar rdf:type owl:Class ;
+          rdfs:subClassOf feo:NutrientMeasurement .
+
+
+###  http://purl.org/heals/food-explanation-ontology/System
+feo:System rdf:type owl:Class ;
+           rdfs:subClassOf prov:Entity ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty feo:isInSeason ;
+                             owl:someValuesFrom feo:Season
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty resource:SIO_000061 ;
+                             owl:someValuesFrom resource:SIO_000414
+                           ] .
+
+
+###  http://purl.org/heals/food-explanation-ontology/SystemCharacteristic
+feo:SystemCharacteristic rdf:type owl:Class ;
+                         rdfs:subClassOf feo:Characteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/UserCharacteristic
+feo:UserCharacteristic rdf:type owl:Class ;
+                       rdfs:subClassOf feo:Characteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/WeightGain
+feo:WeightGain rdf:type owl:Class ;
+               rdfs:subClassOf feo:Goal ;
+               owl:disjointWith feo:WeightLoss ;
+               rdfs:label "weight gain" .
+
+
+###  http://purl.org/heals/food-explanation-ontology/WeightLoss
+feo:WeightLoss rdf:type owl:Class ;
+               rdfs:subClassOf feo:Goal ;
+               rdfs:label "weight loss" .
+
+
+###  http://purl.org/heals/food/Food
+food:Food rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty feo:isAvailibleIn ;
+                            owl:someValuesFrom feo:Season
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty feo:isAvailibleIn ;
+                            owl:someValuesFrom resource:SIO_000414
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty food:hasIngredient ;
+                            owl:someValuesFrom food:Ingredient
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty feo:isInternal ;
+                            owl:hasValue "true"^^xsd:boolean
+                          ] .
+
+
+###  http://purl.org/heals/food/Ingredient
+food:Ingredient rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                  owl:onProperty feo:isAvailibleIn ;
+                                  owl:someValuesFrom feo:Season
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty feo:isAvailibleIn ;
+                                  owl:someValuesFrom resource:SIO_000414
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty feo:isInternal ;
+                                  owl:hasValue "true"^^xsd:boolean
+                                ] .
+
+
+###  http://semanticscience.org/resource/SIO_000052
+resource:SIO_000052 rdf:type owl:Class .
+
+
+###  http://semanticscience.org/resource/SIO_000085
+resource:SIO_000085 rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:isAbout ;
+                                      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass feo:Parameter
+                                    ] .
+
+
+###  http://semanticscience.org/resource/SIO_000414
+resource:SIO_000414 rdf:type owl:Class ;
+                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                      owl:onProperty feo:isInternal ;
+                                      owl:hasValue "false"^^xsd:boolean
+                                    ] .
+
+
+###  http://semanticscience.org/resource/SIO_000417
+resource:SIO_000417 rdf:type owl:Class .
+
+
+###  http://semanticscience.org/resource/SIO_000418
+resource:SIO_000418 rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Entity
+prov:Entity rdf:type owl:Class .
+
+
+###  https://purl.org/heals/eo#Contextual_Knowledge
+<https://purl.org/heals/eo#Contextual_Knowledge> rdf:type owl:Class ;
+                                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                                       owl:onProperty feo:isInternal ;
+                                                                       owl:hasValue "false"^^xsd:boolean
+                                                                     ] .
+
+
+###  https://purl.org/heals/eo#Fact
+<https://purl.org/heals/eo#Fact> rdf:type owl:Class .
+
+
+###  https://purl.org/heals/eo#user
+<https://purl.org/heals/eo#user> rdf:type owl:Class ;
+                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                   owl:onProperty feo:accomplishedGoal ;
+                                                   owl:someValuesFrom feo:Goal
+                                                 ] ,
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty feo:hasGoal ;
+                                                   owl:someValuesFrom feo:Goal
+                                                 ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/heals/food-explanation-ontology/Autumn
+feo:Autumn rdf:type owl:NamedIndividual ,
+                    feo:Season ;
+           resource:SIO_000668 feo:SystemA .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Butternut_Squash
+feo:Butternut_Squash rdf:type owl:NamedIndividual ;
+                     feo:isAvailibleIn feo:Autumn .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Butternut_Squash_Soup
+feo:Butternut_Squash_Soup rdf:type owl:NamedIndividual ,
+                                   food:Food ;
+                          food:hasIngredient feo:Butternut_Squash .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Cheese
+feo:Cheese rdf:type owl:NamedIndividual ,
+                    obo:FOODON_03400775 .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Goal-Characteristic
+feo:Goal-Characteristic rdf:type owl:NamedIndividual ,
+                                 feo:Characteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Ham
+feo:Ham rdf:type owl:NamedIndividual ,
+                 obo:FOODON_03400645 .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Parameter
+feo:Parameter rdf:type owl:NamedIndividual ,
+                       feo:Characteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/PescatarianDiet
+feo:PescatarianDiet rdf:type owl:NamedIndividual ,
+                             feo:Diet .
+
+
+###  http://purl.org/heals/food-explanation-ontology/PregnancyDiet
+feo:PregnancyDiet rdf:type owl:NamedIndividual ,
+                           feo:Diet .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Spring
+feo:Spring rdf:type owl:NamedIndividual ,
+                    feo:Season .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Strawberry
+feo:Strawberry rdf:type owl:NamedIndividual ,
+                        obo:FOODON_03400644 ;
+               feo:isAvailibleIn feo:Spring .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Strawberry_Tart
+feo:Strawberry_Tart rdf:type owl:NamedIndividual ,
+                             food:Food ;
+                    food:hasIngredient feo:Strawberry .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Summer
+feo:Summer rdf:type owl:NamedIndividual ,
+                    feo:Season .
+
+
+###  http://purl.org/heals/food-explanation-ontology/System-Characteristic
+feo:System-Characteristic rdf:type owl:NamedIndividual ,
+                                   feo:Characteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/SystemA
+feo:SystemA rdf:type owl:NamedIndividual ,
+                     feo:System ;
+            feo:isInSeason feo:Autumn .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Tuna
+feo:Tuna rdf:type owl:NamedIndividual ,
+                  obo:FOODON_03400656 .
+
+
+###  http://purl.org/heals/food-explanation-ontology/User-Characteristic
+feo:User-Characteristic rdf:type owl:NamedIndividual ,
+                                 feo:Characteristic .
+
+
+###  http://purl.org/heals/food-explanation-ontology/UserA
+feo:UserA rdf:type owl:NamedIndividual ,
+                   <https://purl.org/heals/eo#user> ;
+          feo:likes feo:Cheese ;
+          food:forbids feo:Tuna .
+
+
+###  http://purl.org/heals/food-explanation-ontology/VeganDiet
+feo:VeganDiet rdf:type owl:NamedIndividual ,
+                       feo:Diet .
+
+
+###  http://purl.org/heals/food-explanation-ontology/VegetarianDiet
+feo:VegetarianDiet rdf:type owl:NamedIndividual ,
+                            feo:Diet .
+
+
+###  http://purl.org/heals/food-explanation-ontology/WhatIfItWereSpring
+feo:WhatIfItWereSpring rdf:type owl:NamedIndividual ;
+                       feo:hasParameter feo:Spring ;
+                       rdfs:label "What if it were spring?" .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Winter
+feo:Winter rdf:type owl:NamedIndividual ,
+                    feo:Season .
+
+
+###  http://purl.org/heals/food-explanation-ontology/What_if_I_was_Vegan?
+<http://purl.org/heals/food-explanation-ontology/What_if_I_was_Vegan?> rdf:type owl:NamedIndividual ;
+                                                                       feo:hasParameter feo:VeganDiet .
+
+
+###  http://purl.org/heals/food-explanation-ontology/What_if_it_were_spring?
+<http://purl.org/heals/food-explanation-ontology/What_if_it_were_spring?> rdf:type owl:NamedIndividual ;
+                                                                          feo:hasParameter feo:Spring .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup?
+<http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup?> rdf:type owl:NamedIndividual ;
+                                                                                 feo:hasParameter feo:Butternut_Squash_Soup .
+
+
+###  http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?
+<http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?> rdf:type owl:NamedIndividual ;
+                                                                                                        feo:hasPrimaryParameter feo:Butternut_Squash_Soup ;
+                                                                                                        feo:hasSecondaryParameter feo:Strawberry_Tart .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
