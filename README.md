@@ -10,14 +10,14 @@ prefix feo: <http://purl.org/heals/food-explanation-ontology/>
 
 SELECT DISTINCT ?characteristic ?classes
 WHERE{
-?question feo:hasParameter ?parameter .
-?parameter feo:hasCharacteristic ?characteristic .
-?characteristic feo:isInternal False .
-?systemChar a feo:SystemCharacteristic .
-?userChar a feo:UserCharacteristic .
-filter ( ?characteristic = ?systemChar || ?characteristic = ?userChar ) .
-?characteristic a ?classes .
-?classes rdfs:subClassOf feo:Characteristic .
+  ?question feo:hasParameter ?parameter .
+  ?parameter feo:hasCharacteristic ?characteristic .
+  ?characteristic feo:isInternal False .
+  ?systemChar a feo:SystemCharacteristic .
+  ?userChar a feo:UserCharacteristic .
+  filter ( ?characteristic = ?systemChar || ?characteristic = ?userChar ) .
+  ?characteristic a ?classes .
+  ?classes rdfs:subClassOf feo:Characteristic .
 }
 ```
 
