@@ -1,6 +1,23 @@
 # Food Explanation Ontology
 Ontology for generating Food Related Explanations
 
+## Setup
+
+* Prepare the virtual environment
+
+```
+python -m pip install virtualenv
+python -m virtualenv env --python=python3
+source env/bin/activate
+python -m pip install -r requirements.txt
+```
+
+* Run the code
+
+```
+python src/runfeo.py
+```
+
 ## Competency Questions
 
 1. **Contextual** - "Why should I eat Butternut Squash Soup?"
