@@ -1,5 +1,5 @@
 from owlready2 import *
-
+import os
 
 '''
 first path works,
@@ -13,9 +13,10 @@ third path also doesn't work - throws a parsing error
 
 '''
 
-path = 'http://purl.org/heals/food'
+path = ""
+# path = 'http://purl.org/heals/food'
 # path = 'http://purl.org/heals/eo'
-
+path = os.path.abspath('ontologies/feo.owl')
 
 onto = get_ontology(path).load()
 
