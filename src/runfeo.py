@@ -14,7 +14,6 @@ third path also doesn't work - throws a parsing error
 '''
 
 path = 'http://purl.org/heals/food'
-# path = "file:///mnt/c/Users/Ishita Padhiar/Documents/Research2020/food-expanation-ontology.github.io/ontologies/feo.owl"
 # path = 'http://purl.org/heals/eo'
 
 
