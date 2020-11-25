@@ -38,6 +38,30 @@ WHERE{
 }
 ```
 
+2. **Counterfactual** - "Why should I eat Butternut Squash Soup over a Strawberry Tart"
+
+```
+PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
+PREFIX food: <http://purl.org/heals/food/>
+PREFIX eo: <http://purl.org/heals/eo#>
+
+Select DISTINCT ?factType ?factA ?foilType ?foilB
+Where{
+  ?question feo:hasPrimaryParameter ?parameterA .
+  ?question feo:hasSecondaryParameter ?parameterB .
+
+  ?parameterA feo:hasCharacteristic ?factA .
+  ?factA a <https://purl.org/heals/eo#Fact>.
+  ?factA a ?factType .
+  ?factType (rdfs:subClassOf+) feo:Characteristic .
+  
+  ?parameterB feo:hasCharacteristic ?foilB .
+  ?foilB a <https://purl.org/heals/eo#Foil> .
+  ?foilB a ?foilType.
+  ?foilType (rdfs:subClassOf+) feo:Characteristic .
+}
+```
+
 3. **Contrastive** - "What if it was Spring?"
 
 ```
