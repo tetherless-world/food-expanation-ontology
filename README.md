@@ -1,5 +1,5 @@
 # Food Explanation Ontology
-Ontology for generating Food Related Explanations
+Ontology for generating Food Related Explanation
 
 ## Setup
 
