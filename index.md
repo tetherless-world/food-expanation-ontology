@@ -3,8 +3,7 @@ layout: default
 title: Food Explanation Ontology: Semantic Modeling of Food Recommendation Explanations
 ---
 
-[Abstract](#abstract) | [Resources](#resources) | [Tools Used](#toolsused) | [Publications](#publications)
-
+[Abstract](#abstract) | [Resources](#resources) | [Tools Used](#toolsused) 
 
 <h1 class="page-title" style="text-transform:uppercase;" id="header">FOOD EXPLANTION ONTOLOGY: A SEMANTIC MODELING OF FOOD RECOMMENDATION EXPLANTIONS</h1>
 <!--<h3 style="color:dimgrey;">Shruthi Chari<sup>1</sup>, Oshani Seneviratne<sup>1</sup>, Daniel M. Gruen<sup>2</sup>, Morgan Foreman<sup>2</sup>, Deborah L. McGuinness<sup>1</sup>, Amar K. Das<sup>2</sup></h3>
