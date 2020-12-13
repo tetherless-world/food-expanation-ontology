@@ -1,1 +1,24 @@
-theme: jekyll-theme-dinky
+title: Explanations Ontology - Modeling Explainability in User-Centered AI System Design
+
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+url:              https://tetherless-world.github.io/
+baseurl:          https://tetherless-world.github.io/explanation-ontology/
+
+author:
+  name:           'Mark Otto'
+  url:            https://twitter.com/mdo
+
+paginate:         5
+
+# Custom vars
+version:          2.1.0
+
+github:
+  repo:           https://github.com/tetherless-world/explanation-ontology

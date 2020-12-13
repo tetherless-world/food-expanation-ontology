@@ -1,0 +1,89 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+<!--     <div class="sidebar-about">
+      <h1>
+        <a href="{{ site.baseurl }}">
+          {{ site.title }}
+        </a>
+      </h1>
+      <p class="lead">{{ site.description }}</p>
+    </div> -->
+
+    <nav class="sidebar-nav">
+      <ul style="list-style: none;">
+        <li><button class="collapsible">
+<a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}index">About</a></button>
+        <div class="button-content">
+        <ul>
+          <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}index#abstract">Descriptions</a></li>
+
+          <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}index#publications">Publications</a></li>
+
+        </ul>
+        </div>
+        </li>
+      <li><button class="collapsible">
+<a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}index#resoruces">Resources</a></button>
+        <div class="button-content">
+        <ul>
+          <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}presentations">Presentations</a></li>
+        </ul>
+        </div>
+        </li>
+              <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}protocol">Protocol Guidance</a></li>
+      <li><button class="collapsible">
+<a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}ontology">Ontology</a></button>
+        <div class="button-content">
+        <ul>
+          <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}ontology#ontologyabout">About Ontology</a></li>
+          <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}ontology#ontologylinks">Access Links</a></li>
+           <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}ontology#ontologymetadata">Ontology Metadata</a></li>
+
+        </ul>
+        </div>
+        </li>
+        <li><button class="collapsible">
+<a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}modeling">Explanation Types</a></button>
+        <div class="button-content">
+          <ul>
+            <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}modeling#explanationtypes">Catalog</a></li>
+            <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}modeling#modelingexplanations">Modeling</a></li>
+          </ul>
+        </div>
+        </li>
+         <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}clinicalexample">Clinical Example</a></li>
+
+        <li><button class="collapsible">
+<a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}competencyquestions">Competency Questions</a></button>
+        <div class="button-content">
+          <ul>
+            <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}competencyquestions#sparql">SPARQL Queries</a></li>
+          </ul>
+        </div>
+        </li>
+        <li><a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{site.baseurl}}index#toolsused">Tools Used</a></li>      
+      
+
+      {% comment %}
+        The code below dynamically generates a sidebar nav of pages with
+        `layout: page` in the front-matter. See readme for usage.
+      {% endcomment %}
+
+<!--       {% assign pages_list = site.pages %}
+      {% for node in pages_list %}
+        {% if node.title == "home" %}
+          {% if node.layout == "page" %}
+            <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{node.url}}">{{ node.title }}</a>
+          {% endif %}
+        {% endif %}
+      {% endfor %} -->
+
+      <!--<a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>-->
+        <li><a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a></li>
+      </ul>
+      <!--<span class="sidebar-nav-item">Currently v{{ site.version }}</span>-->
+    </nav>
+
+    <p>&copy; {{ site.time | date: '%Y' }}. All rights reserved.</p>
+  </div>
+</div>
