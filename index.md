@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Explanation Ontology: A Model of Explanations for User-Centered AI
+title: Food Explanation Ontology: Semantic Modeling of Food Recommendation Explanations
 ---
 
 [Abstract](#abstract) | [Resources](#resources) | [Tools Used](#toolsused) | [Publications](#publications)
 
 
-<h1 class="page-title" style="text-transform:uppercase;" id="header">EXPLANATION ONTOLOGY: A MODEL OF EXPLANATIONS FOR USER-CENTERED AI</h1>
-<h3 style="color:dimgrey;">Shruthi Chari<sup>1</sup>, Oshani Seneviratne<sup>1</sup>, Daniel M. Gruen<sup>2</sup>, Morgan Foreman<sup>2</sup>, Deborah L. McGuinness<sup>1</sup>, Amar K. Das<sup>2</sup></h3>
-<h3><a href="https://www.rpi.edu/"><sup>1</sup>Rensselaer Polytechnic Institute</a> | <a href="https://www.research.ibm.com/labs/cambridge/"><sup>2</sup>IBM Research, Cambridge</a></h3>
-<p class="message">A website to navigate resources open-sourced via the associated ISWC 2020 submission. Use the side navigation panel to explore different sections of the website and click on an add symbol for more navigation options under some sections.</p>
+<h1 class="page-title" style="text-transform:uppercase;" id="header">FOOD EXPLANTION ONTOLOGY: A SEMANTIC MODELING OF FOOD RECOMMENDATION EXPLANTIONS</h1>
+<!--<h3 style="color:dimgrey;">Shruthi Chari<sup>1</sup>, Oshani Seneviratne<sup>1</sup>, Daniel M. Gruen<sup>2</sup>, Morgan Foreman<sup>2</sup>, Deborah L. McGuinness<sup>1</sup>, Amar K. Das<sup>2</sup></h3>
+<h3><a href="https://www.rpi.edu/"><sup>1</sup>Rensselaer Polytechnic Institute</a> | <a href="https://www.research.ibm.com/labs/cambridge/"><sup>2</sup>IBM Research, Cambridge</a></h3>-->
+<p class="message">A website to navigate resources open-sourced via the associated DECOR 2020 submission. Use the side navigation panel to explore different sections of the website and click on an add symbol for more navigation options under some sections.</p>
 
 <!-- <table>
   <tbody>
@@ -25,7 +25,7 @@ title: Explanation Ontology: A Model of Explanations for User-Centered AI
   
   
 <h2>Abstract</h2>
-  <p>Explainability has been a goal for Artificial Intelligence systems since their conception, with the need for explanations only growing as machine learning models are increasingly used in critical settings such as healthcare. Currently, explanations are often treated as a nice-to-have feature added in a post-hoc manner. With greater adoption of these systems and emphasis on user-centric explainability, there is a need for a structured representation that treats explainability as a primary consideration, mapping end user needs to specfic explanation types. We design an explanations ontology to formalize the generation of explanations in a machine-readable format, accounting for the system and user attributes in the process. Within our ontology, we support the modeling of different literature-derived explanation types, whose requirements and generational needs were further refined through a requirements gathering exercise conducted with clinicians. Through this ontology, we hope to benefit system designers to include explanation generation facilities in their systems. We evaluate our ontology via competency questions that are inspired by learnings from our clinical requirements gathering exercise and are geared towards a system designer who might use our ontology to learn about the best explanation types to include, given a combination of users' needs and a system's capabilities, both in real-time and system design settings.</p>
+  <p>With the increased use of AI methods to provide recommendations in the health, and specifically, food space, there is also an increased need for explainability of those recommendations. Such explanations would benefit users of recommendation systems by empowering them with a justification for following the system's suggestions. We present the Food Explanation Ontology (FEO) that provides a formalism for generating explanations to users for food-related recommendations. FEO creates a semantic modeling for food recommendations, using concepts from the explanation domain to create intelligent responses to user questions about food recommendations they receive from AI systems such as personalized knowledge base question answering systems. FEO uses a modular, extensible structure that lends itself to a variety of explanations while still preserving important semantic details to accurately represent food recommendations.</p>
  </content>
  
  <hr/>
@@ -87,14 +87,14 @@ title: Explanation Ontology: A Model of Explanations for User-Centered AI
   </content>
   <!--<iframe src="https://tetherless-world.github.io/explanation-ontology/WidocoDocumentation/index-en.html" style="width:100%;"/>-->
  
-  <article class="mb-5" id="publications">
+  <!--<article class="mb-5" id="publications">
 <content>
   <h2>Publications</h2>
   <ul>
     <li>Explanation Ontology: A Model of Explanations for User-Centered AI; Shruthi Chari , Oshani Seneviratne , Daniel M. Gruen ,  Morgan A. Foreman , Amar K. Das, Deborah L. McGuinness; Resource Track,19th International Semantic Web Conference 2020</li>
     <li>Explanation Ontology in Action: A Clinical Use-Case; Shruthi Chari , Oshani Seneviratne , Daniel M. Gruen ,  Morgan A. Foreman , Amar K. Das, Deborah L. McGuinness; Posters and Demo Track,19th International Semantic Web Conference 2020</li>
   </ul>
-  </content>
+  </content>-->
 <!-- 
 <div class="posts">
   {% for post in paginator.posts %}
