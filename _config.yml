@@ -1,4 +1,4 @@
-title: Explanations Ontology - Modeling Explainability in User-Centered AI System Design
+title: Semantic Modeling for Food Recommendation Explanations
 
 # Dependencies
 markdown:         redcarpet
@@ -9,7 +9,7 @@ permalink:        pretty
 
 # Setup
 url:              https://tetherless-world.github.io/
-baseurl:          https://tetherless-world.github.io/explanation-ontology/
+baseurl:          https://tetherless-world.github.io/food-explanation-ontology/
 
 author:
   name:           'Mark Otto'
@@ -21,4 +21,4 @@ paginate:         5
 version:          2.1.0
 
 github:
-  repo:           https://github.com/tetherless-world/explanation-ontology
+  repo:           https://github.com/tetherless-world/food-explanation-ontology
