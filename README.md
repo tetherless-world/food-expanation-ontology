@@ -3,7 +3,7 @@ Ontology for generating Food Related Explanation
 
 ## Setup
 
-1. Prepare the virtual environment
+**1. Prepare the virtual environment**
 
 ```
 python -m pip install virtualenv
@@ -12,7 +12,7 @@ source env/bin/activate
 python -m pip install -r requirements.txt
 ```
 
-2. Run the code
+**2. Run the code**
 
 Run the SPARQL queries on the inferred axioms from ```feo.ttl```.
 
