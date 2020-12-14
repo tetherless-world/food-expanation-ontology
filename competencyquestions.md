@@ -22,12 +22,12 @@ title: Competency Questions
   <tr>
     <td>Contextual</td>
     <td><a href="#question1">(Q1).</a> Why should I eat Cauliflower Potato Curry?</td>
-    <td>Cauliflower Potato Curry uses ingredient Cauliflower,  which is available in the current season</td>
+    <td>Cauliflower Potato Curry uses ingredient Cauliflower,  which is available in the current season. </td>
   </tr>
   <tr>
     <td>Contrastive</td>
     <td><a href="#question2">(Q2).</a> Why should I eat Butternut Squash Soup over a Strawberry Tart?</td>
-    <td>Butternut Squash Soup is better than a Strawberry Tart because Butternut Squash Soup is currently in season, and you are allergic to Strawberry Tarts</td>
+    <td>Butternut Squash Soup is better than a Strawberry Tart because Butternut Squash Soup is currently in season, and you are allergic to Strawberry Tarts. </td>
   </tr>
   <tr>
     <td>Counterfactual</td>
