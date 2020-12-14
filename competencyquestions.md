@@ -8,8 +8,7 @@ title: Competency Questions
 <content>
   
   
-<h2>Example of Competency Questions</h2>
-  <p>We have crafted a set of competency questions which showcase how our explanation ontology can be useful to provide system designers the support they seek when planning to include different explanation types into the system and while deciding what explanation would be best suited for the user's question in real-time given the system's capabilities. We first present a table of our competency question list with the setting they correspond to and answers, and, we then present SPARQL query implementations for these questions.</p>
+<h2>Competency Questions</h2>
   <table>
 <thead>
   <tr>
