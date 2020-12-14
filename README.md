@@ -24,14 +24,15 @@ Alternatively, one may also run the reasoner separately, save the inferred value
 
 ## Competency Questions
 
-1. **Contextual** - "Why should I eat Butternut Squash Soup?"
+1. **Contextual** - "Why should I eat Cauliflower Potato Curry?"
 
 ```
 prefix feo: <http://purl.org/heals/food-explanation-ontology/>
+PREFIX eo: <http://purl.org/heals/eo#>
 
 SELECT DISTINCT ?characteristic ?classes
 WHERE{
-  ?question feo:hasParameter ?parameter .
+  ?WhyEatCauliflowerPotatoCurry feo:hasParameter ?parameter .
   ?parameter feo:hasCharacteristic ?characteristic .
   ?characteristic feo:isInternal False .
   ?systemChar a feo:SystemCharacteristic .
@@ -39,13 +40,13 @@ WHERE{
   filter ( ?characteristic = ?systemChar || ?characteristic = ?userChar ) .
   ?characteristic a ?classes .
   ?classes rdfs:subClassOf feo:Characteristic .
+  Filter Not Exists{?classes rdfs:subClassOf <https://purl.org/heals/eo#knowledge> }.
 }
 ```
 
 2. **Counterfactual** - "Why should I eat Butternut Squash Soup over a Strawberry Tart"
 
 ```
-PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
 PREFIX food: <http://purl.org/heals/food/>
 PREFIX eo: <http://purl.org/heals/eo#>
 
@@ -58,23 +59,31 @@ Where{
   ?factA a <https://purl.org/heals/eo#Fact>.
   ?factA a ?factType .
   ?factType (rdfs:subClassOf+) feo:Characteristic .
+  Filter Not Exists{?factType rdfs:subClassOf <https://purl.org/heals/eo#knowledge> }.
+  Filter Not Exists{?s rdfs:subClassOf ?factType}.
   
   ?parameterB feo:hasCharacteristic ?foilB .
   ?foilB a <https://purl.org/heals/eo#Foil> .
   ?foilB a ?foilType.
   ?foilType (rdfs:subClassOf+) feo:Characteristic .
+  Filter Not Exists{?foilType rdfs:subClassOf <https://purl.org/heals/eo#knowledge> }.
+  Filter Not Exists{?t rdfs:subClassOf ?foilType}.
+
 }
 ```
 
-3. **Contrastive** - "What if it was Spring?"
+3. **Contrastive** - "What if I was pregnant?"
 
 ```
 PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
 PREFIX food: <http://purl.org/heals/food/>
-SELECT Distinct ?parameter ?outputs
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+
+SELECT Distinct ?parameter ?prop ?outputs
 WHERE{
-feo:WhatIfItWereSpring  feo:hasParameter ?parameter .
-?parameter feo:isCharacteristicOf ?outputs .
-?outputs a food:Food .
+  feo:WhatIfIWasPregnant  feo:hasParameter ?parameter .
+  ?parameter ?prop  ?outputs .
+  ?prop rdfs:subPropertyOf feo:isCharacteristicOf.
+  ?outputs a food:Food .
 }
 ```
