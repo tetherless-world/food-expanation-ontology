@@ -27,8 +27,8 @@ title: Food Explanation Ontology
   
   <h3 id="ontologylinks">Ontology Links</h3>
   <ul>
-  <li>Ontology documentation generated using the <a href="https://github.com/dgarijo/Widoco">Widoco</a> tool can be browsed at: <a href="https://tetherless-world.github.io/explanation-ontology/WidocoDocumentation/index-en.html">https://tetherless-world.github.io/explanation-ontology/WidocoDocumentation/index-en.html</a></li>
-  <li>Ontology can be accessed from <a href="https://purl.org/heals/eo">https://purl.org/heals/food-explanation-ontology</a></li>
+  <li>Ontology documentation generated using the <a href="https://github.com/dgarijo/Widoco">Widoco</a> tool can be browsed at: <a href="https://tetherless-world.github.io/explanation-ontology/WidocoDocumentation/index-en.html">https://tetherless-world.github.io/food-explanation-ontology/WidocoDocumentation/index-en.html</a></li>
+  <li>Ontology can be accessed from <a href="https://purl.org/heals/food-explanation-ontology/">https://purl.org/heals/food-explanation-ontology</a></li>
   <li class="note">We are aware of issues with the PURL service at the moment, please use the github page instead. </li>
   </ul>
   
@@ -36,12 +36,6 @@ title: Food Explanation Ontology
   <content>
     <h3>Ontology Metadata</h3>
     <p>Metadata that would be useful to navigate our <a href="#resources">resources</a>, i.e., ontology, modeling snippets and SPARQL queries. The content below can also be viewed by inspecting our explanation ontology in an ontology editor, like, <a href="https://protege.stanford.edu/products.php#desktop-protege">Protege 5.5.0</a>.
-  <h4 id="ontologiesreused">Ontologies Reused</h4>
-  <ul>
-  <li><a href="https://raw.githubusercontent.com/MaastrichtU-IDS/semanticscience/master/ontology/sio.owl">SemanticScience Integrated Ontology (SIO)</a></li>
-  <li><a href="https://www.w3.org/TR/prov-o/">The Provenance Ontology (PROV-O)</a></li>
-  <li><a href="https://raw.githubusercontent.com/tetherless-world/explanation-ontology/master/Ontologies/explanations-pattern-ontology.owl">Explanations Pattern Ontology</a></li>
-  </ul>
     
   <h4> Ontology Prefixes </h4>
   <table style="width:100%">
