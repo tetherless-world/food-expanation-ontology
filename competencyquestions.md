@@ -47,110 +47,130 @@ title: Competency Questions
 </tbody>
 </table>
 
+
+
+
+
 <h3 id="sparql">SPARQL Queries</h3>
 <ol>
-  <li id="question1"><strong>Which AI models can generate trace based explanations?</strong>
+  <li id="question1"><strong>Why should I eat Cauliflower Potato Curry?</strong>
   <ul type = "circle">
     <li> <strong>Query:</strong> <br/>
       <pre>
-prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>
-prefix owl:<http://www.w3.org/2002/07/owl#>
-prefix ep: <http://linkedu.eu/dedalo/explanationPattern.owl#>
-prefix prov: <http://www.w3.org/ns/prov#>
+prefix feo: <http://purl.org/heals/food-explanation-ontology/>
+PREFIX eo: <http://purl.org/heals/eo#>
 
-select ?class ?property ?taskObject where {
-?class (rdfs:subClassOf|owl:equivalentClass)/owl:onProperty ep:isBasedOn .
-?class (rdfs:subClassOf|owl:equivalentClass)/owl:someValuesFrom ?object .
-?object owl:intersectionOf ?collections .
- ?collections rdf:rest*/rdf:first ?comps .
-?comps rdf:type owl:Restriction .
-?comps owl:onProperty ?property .
-?comps owl:someValuesFrom ?taskObject .
-?class rdfs:label "Trace Based Explanation" .
+SELECT DISTINCT ?characteristic ?classes
+WHERE{
+  ?WhyEatCauliflowerPotatoCurry feo:hasParameter ?parameter .
+  ?parameter feo:hasCharacteristic ?characteristic .
+  ?characteristic feo:isInternal False .
+  ?systemChar a feo:SystemCharacteristic .
+  ?userChar a feo:UserCharacteristic .
+  filter ( ?characteristic = ?systemChar || ?characteristic = ?userChar ) .
+  ?characteristic a ?classes .
+  ?classes rdfs:subClassOf feo:Characteristic .
+  Filter Not Exists{?classes rdfs:subClassOf <https://purl.org/heals/eo#knowledge> }.
 }
       </pre></li>
       <li><strong>Answer</strong> <br/>
   <table>
 <thead>
   <tr>
-    <th>Class</th>
-    <th>Property</th>
-    <th>Restriction</th>
+    <th>Characteristic</th>
+    <th>Classes</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>Trace based <br>Explanation</td>
-    <td>wasGeneratedBy</td>
-    <td>'Artificial Intelligence Task' and (used some ('Decision Tree' or 'Knowledge based System'))</td>
+    <td>Autumn</td>
+    <td>SeasonCharacteristic</td>
   </tr>
 </tbody>
 </table>
   </li>
   </ul>
   </li>
-  <li id="question2"><strong>What example questions have been identified for counterfactual explanations?</strong>
+  <li id="question2"><strong>Why should I eat Butternut Squash Soup over a Strawberry Tart?</strong>
   <ul type = "circle">
     <li> <strong>Query:</strong> <br/>
       <pre>
-prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>
-prefix owl:<http://www.w3.org/2002/07/owl#>
-prefix ep: <http://linkedu.eu/dedalo/explanationPattern.owl#>
-prefix prov: <http://www.w3.org/ns/prov#>
-prefix eo: <https://purl.org/heals/eo#>
-prefix sio: <http://semanticscience.org/resource/>
+PREFIX food: <http://purl.org/heals/food/>
+PREFIX eo: <http://purl.org/heals/eo#>
 
-select ?questionLabel where {
-   ?explanation a eo:CounterfactualExplanation .
-   ?explanation eo:addresses ?question .
-   ?question a sio:SIO_000085 .
-   ?question rdfs:label ?questionLabel .
+Select DISTINCT ?factType ?factA ?foilType ?foilB
+Where{
+  ?question feo:hasPrimaryParameter ?parameterA .
+  ?question feo:hasSecondaryParameter ?parameterB .
+
+  ?parameterA feo:hasCharacteristic ?factA .
+  ?factA a <https://purl.org/heals/eo#Fact>.
+  ?factA a ?factType .
+  ?factType (rdfs:subClassOf+) feo:Characteristic .
+  Filter Not Exists{?factType rdfs:subClassOf <https://purl.org/heals/eo#knowledge> }.
+  Filter Not Exists{?s rdfs:subClassOf ?factType}.
   
+  ?parameterB feo:hasCharacteristic ?foilB .
+  ?foilB a <https://purl.org/heals/eo#Foil> .
+  ?foilB a ?foilType.
+  ?foilType (rdfs:subClassOf+) feo:Characteristic .
+  Filter Not Exists{?foilType rdfs:subClassOf <https://purl.org/heals/eo#knowledge> }.
+  Filter Not Exists{?t rdfs:subClassOf ?foilType}.
+
 }
       </pre></li>
       <li><strong>Answer</strong> <br/>
-  <table>
+    <table>
 <thead>
   <tr>
-    <th>Question Label</th>
+    <th>FactType</th>
+    <th>FactA</th>
+    <th>FoilType</th>
+    <th>FoilB</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>What other factors about the patient does the system know of?</td>   
-  </tr>
-  <tr>
-    <td>What if the major problem was a fasting plasma glucose?</td>   
+    <td>SeasonCharacteristic</td>
+    <td>Autumn</td>
+    <td>AllergicFoodCharacteristic</td>
+    <td>Strawberry</td>
   </tr>
 </tbody>
 </table>
   </li>
   </ul>
   </li>
-   <li id="question3"><strong>What are the components of a scientific explanation?</strong>
+}
+   <li id="question3"><strong>  What if I was pregnant?"?</strong>
   <ul type = "circle">
     <li> <strong>Query:</strong> <br/>
       <pre>
-prefix rdfs:<http://www.w3.org/2000/01/rdf-schema#>
-prefix owl:<http://www.w3.org/2002/07/owl#>
-select ?class ?restriction where {
-?class (rdfs:subClassOf|owl:equivalentClass) ?restriction .
-?class rdfs:label "Scientific Explanation" .
-}
+PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
+PREFIX food: <http://purl.org/heals/food/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+
+SELECT Distinct ?parameter ?prop ?outputs
+WHERE{
+  feo:WhatIfIWasPregnant  feo:hasParameter ?parameter .
+  ?parameter ?prop  ?outputs .
+  ?prop rdfs:subPropertyOf feo:isCharacteristicOf.
+  ?outputs a food:Food .
       </pre></li>
       <li><strong>Answer</strong> <br/>
   <table>
 <thead>
   <tr>
-    <th>Class</th>
-    <th>Restriction</th>
+    <th>Parameter</th>
+    <th>Property</th>
+    <th>Outputs</th>
   </tr>
 </thead>
 <tbody>
   <tr>
-    <td>Scientific <br>Explanation</td>
-    <td>(ep:isBasedOn some (eo:`Scientific Knowledge' and ((prov:wasGeneratedBy <br> some `Study')  or (prov:wasAssociatedWith some `Scientific Method'))) and <br>  (isBasedOn some `System Recommendation')) or <br>
-(ep:isBasedOn some (`System Recommendation' and <br> (prov:used some (eo:`Scientific Knowledge' and ((prov:wasGeneratedBy <br> some `Study') or (prov:wasAssociatedWith some <br> `Scientific Method'))))))</td>
+    <td>Pregnancy Diet</td>
+    <td>forbids</td>
+    <td>Sushi</td>
   </tr>
 </tbody>
 </table>
