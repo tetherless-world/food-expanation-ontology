@@ -14,9 +14,13 @@ python -m pip install -r requirements.txt
 
 * Run the code
 
-```
-python src/runfeo.py
-```
+Run the SPARQL queries on the inferred axioms from ```feo.ttl```.
+
+Protege Directions:
+- Use the *Export inferred axioms* option in the *File*. 
+- On the window that comes up, select all boxes, except for the last (*Disjoint Classes*)." 
+
+Alternatively, one may also run the reasoner separately, save the inferred values, and import to Blazegraph, or another similar knowledge graph store.
 
 ## Competency Questions
 
