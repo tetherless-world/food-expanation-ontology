@@ -43,7 +43,7 @@ title: Food Explanation Ontology: Semantic Modeling of Food Recommendation Expla
   </tr>
   <tr>
     <td>Ontology</td>
-    <td><a href="ontology">Explanation Ontology</a> </td> 
+    <td><a href="ontology">Food Explanation Ontology</a> </td> 
   </tr>
   <tr>
     <td>Explanation Types</td>
