@@ -133,7 +133,7 @@ Where{
   </ul>
   </li>
 }
-   <li id="question3"><strong>  What if I was pregnant?"?</strong>
+   <li id="question3"><strong>  What if I was pregnant?</strong>
   <ul type = "circle">
     <li> <strong>Query:</strong> <br/>
       <pre>
