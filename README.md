@@ -45,7 +45,7 @@ WHERE{
 }
 ```
 
-2. **Counterfactual** - "Why should I eat Butternut Squash Soup over a Strawberry Tart"
+2. **Counterfactual** - "Why should I eat Butternut Squash Soup over a Broccoli Cheddar Soup?"
 
 ```
 PREFIX food: <http://purl.org/heals/food/>
@@ -93,7 +93,7 @@ WHERE{
 
 ```
 
-4. **Statistical** - "What if I was pregnant?"
+4. **Statistical** - "Why should I follow a low calorie diet?"
 
 ```
 PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
