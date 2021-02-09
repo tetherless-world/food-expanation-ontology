@@ -29,6 +29,7 @@ Alternatively, one may also run the reasoner separately, save the inferred value
 ```
 PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
 PREFIX eo: <http://purl.org/heals/eo#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?characteristic ?classes
 WHERE{
@@ -49,6 +50,7 @@ WHERE{
 ```
 PREFIX food: <http://purl.org/heals/food/>
 PREFIX eo: <http://purl.org/heals/eo#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 Select DISTINCT ?factType ?factA ?foilType ?foilB
 Where{
@@ -78,7 +80,7 @@ Where{
 
 PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
 PREFIX food: <http://purl.org/heals/food/>
-prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 
 SELECT Distinct ?property ?ingredient ?outputs
 WHERE{
