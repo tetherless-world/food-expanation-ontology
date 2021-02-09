@@ -27,7 +27,7 @@ Alternatively, one may also run the reasoner separately, save the inferred value
 1. **Contextual** - "Why should I eat Cauliflower Potato Curry?"
 
 ```
-prefix feo: <http://purl.org/heals/food-explanation-ontology/>
+PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
 PREFIX eo: <http://purl.org/heals/eo#>
 
 SELECT DISTINCT ?characteristic ?classes
@@ -90,3 +90,27 @@ WHERE{
 }
 
 ```
+
+4. **Statistical** - "What if I was pregnant?"
+
+```
+PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
+PREFIX eo: <http://purl.org/heals/eo#>
+
+SELECT DISTINCT ?goal ((Count( distinct ?accomplishedUsers))/(Count( distinct ?allOtherUsers)) as ?percentAccomplished)
+
+WHERE{
+  
+  ?WhyFollowLowCalorieDiet feo:hasParameter ?diet.
+  ?WhyFollowLowCalorieDiet feo:askedBy ?mainUser.
+  ?mainUser feo:hasGoal ?goal.
+  ?allOtherUsers feo:hasDiet ?diet .
+  FILTER ( ?allOtherUsers != ?mainUser ).
+  ?accomplishedUsers feo:hasDiet ?diet .
+  ?accomplishedUsers feo:accomplishedGoal ?goal.
+}
+GROUP BY ?goal
+Having ((Count( distinct ?accomplishedUsers))/(Count( distinct ?allOtherUsers)) >= .5)
+```
+
+
