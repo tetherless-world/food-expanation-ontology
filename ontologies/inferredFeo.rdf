@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-<rdf:RDF xmlns="http://www.semanticweb.org/ishitapadhiar/ontologies/2020/11/untitled-ontology-56#"
-     xml:base="http://www.semanticweb.org/ishitapadhiar/ontologies/2020/11/untitled-ontology-56"
+<rdf:RDF xmlns="http://www.semanticweb.org/ishitapadhiar/ontologies/2021/1/untitled-ontology-62#"
+     xml:base="http://www.semanticweb.org/ishitapadhiar/ontologies/2021/1/untitled-ontology-62"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:eo="https://purl.org/heals/eo#"
      xmlns:obo="http://purl.obolibrary.org/obo/"
@@ -26,7 +26,7 @@
      xmlns:SpecificationMetadata="http://www.omg.org/techprocess/ab/SpecificationMetadata/"
      xmlns:SpecificationMetadata1="https://www.omg.org/techprocess/ab/SpecificationMetadata/"
      xmlns:food-explanation-ontology="http://purl.org/heals/food-explanation-ontology/">
-    <owl:Ontology rdf:about="http://www.semanticweb.org/ishitapadhiar/ontologies/2020/11/untitled-ontology-56">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ishitapadhiar/ontologies/2021/1/untitled-ontology-62">
         <protege:defaultLanguage>en</protege:defaultLanguage>
         <dc:contributor rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Contributors are those that engage in discussions in the context of SIO (in alphabetical order):
 sivaram arabandi
@@ -97,17 +97,17 @@ mailing list: http://groups.google.com/group/sio-ontology
         <terms:license rdf:resource="http://www.omg.org/techprocess/ab/SpecificationMetadata/MITLicense"/>
         <terms:license>Copyright 2019 IBM Research and Rensselaer Polytechnic Institute
 
-			Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
-	you may not use this file except in compliance with the License.
-	You may obtain a copy of the License at
+            Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
 
-		http://www.apache.org/licenses/LICENSE-2.0
+        http://www.apache.org/licenses/LICENSE-2.0
 
-	Unless required by applicable law or agreed to in writing, software
-	distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
-	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-	See the License for the specific language governing permissions and
-	limitations under the License.</terms:license>
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an &quot;AS IS&quot; BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.</terms:license>
         <terms:license rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://opensource.org/licenses/MIT</terms:license>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2019-04-12</terms:modified>
         <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-10-01</terms:modified>
@@ -979,6 +979,12 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     
 
 
+    <!-- http://purl.org/heals/food-explanation-ontology/askedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/heals/food-explanation-ontology/askedBy"/>
+    
+
+
     <!-- http://purl.org/heals/food-explanation-ontology/componentOf -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/heals/food-explanation-ontology/componentOf"/>
@@ -1021,6 +1027,12 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:range rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
     </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/hasDiet -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/heals/food-explanation-ontology/hasDiet"/>
     
 
 
@@ -1104,9 +1116,25 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
     
 
 
+    <!-- http://purl.org/heals/food-explanation-ontology/isDietFor -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/heals/food-explanation-ontology/isDietFor"/>
+    
+
+
     <!-- http://purl.org/heals/food-explanation-ontology/isInSeason -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/heals/food-explanation-ontology/isInSeason"/>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/heals/food-explanation-ontology/isIngredientOf">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/heals/food-explanation-ontology/isCharacteristicOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/heals/food-explanation-ontology/supports"/>
+        <owl:inverseOf rdf:resource="http://purl.org/heals/food/hasIngredient"/>
+    </owl:ObjectProperty>
     
 
 
@@ -1153,6 +1181,25 @@ Note how the value of the unqualified influence (prov:wasGeneratedBy :activity1)
 
     <owl:ObjectProperty rdf:about="http://purl.org/heals/food-explanation-ontology/opposes">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/recommendedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/heals/food-explanation-ontology/recommendedBy">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/heals/food-explanation-ontology/hasCharacteristic"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/heals/food-explanation-ontology/supports"/>
+        <owl:inverseOf rdf:resource="http://purl.org/heals/food-explanation-ontology/recommends"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/recommends -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/heals/food-explanation-ontology/recommends">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/heals/food-explanation-ontology/isCharacteristicOf"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/heals/food-explanation-ontology/isSupportedBy"/>
     </owl:ObjectProperty>
     
 
@@ -5578,6 +5625,46 @@ http://www.w3.org/TR/2013/REC-prov-constraints-20130430/#term-Revision 23 April 
     
 
 
+    <!-- http://purl.org/heals/food-explanation-ontology/isLowCalorie -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/heals/food-explanation-ontology/isLowCalorie">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/isLowCarb -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/heals/food-explanation-ontology/isLowCarb">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/isLowFat -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/heals/food-explanation-ontology/isLowFat">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/isLowProtein -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/heals/food-explanation-ontology/isLowProtein">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/isLowSodium -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/heals/food-explanation-ontology/isLowSodium">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://purl.org/heals/food-explanation-ontology/isSupportive -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/heals/food-explanation-ontology/isSupportive">
@@ -7479,17 +7566,6 @@ Specific commodities will be listed in this group with their code nos. according
     <!-- http://purl.org/heals/food-explanation-ontology/AllergicFoodCharacteristic -->
 
     <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/AllergicFoodCharacteristic">
-        <owl:equivalentClass rdf:resource="http://purl.org/heals/food-explanation-ontology/Allergies"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/FoodPreferences"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeFoodCharacteristic"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/heals/food-explanation-ontology/Allergies -->
-
-    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/Allergies">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -7501,10 +7577,9 @@ Specific commodities will be listed in this group with their code nos. according
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/FoodPreferences"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeFoodCharacteristic"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeUserCharacteristic"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
-        <rdfs:label>allergies</rdfs:label>
+        <rdfs:label>Allergic Food Characteristic</rdfs:label>
     </owl:Class>
     
 
@@ -7525,6 +7600,7 @@ Specific commodities will be listed in this group with their code nos. according
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/PositiveUserCharacteristic"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:label>Allowed Food Characteristic</rdfs:label>
     </owl:Class>
     
 
@@ -7562,7 +7638,10 @@ Specific commodities will be listed in this group with their code nos. according
 
     <!-- http://purl.org/heals/food-explanation-ontology/Characteristic -->
 
-    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/Characteristic">
+        <rdfs:label>Characteristic</rdfs:label>
+        <prov:definition>a distinguishing trait, quality, or property of an object record</prov:definition>
+    </owl:Class>
     
 
 
@@ -7583,17 +7662,6 @@ Specific commodities will be listed in this group with their code nos. according
     <!-- http://purl.org/heals/food-explanation-ontology/DislikeFoodCharacteristic -->
 
     <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/DislikeFoodCharacteristic">
-        <owl:equivalentClass rdf:resource="http://purl.org/heals/food-explanation-ontology/DislikedFoods"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/FoodPreferences"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeFoodCharacteristic"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/heals/food-explanation-ontology/DislikedFoods -->
-
-    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/DislikedFoods">
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -7605,10 +7673,9 @@ Specific commodities will be listed in this group with their code nos. according
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/FoodPreferences"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeFoodCharacteristic"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeUserCharacteristic"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
-        <rdfs:label>disliked foods</rdfs:label>
+        <rdfs:label>Disliked Food Characteristic</rdfs:label>
     </owl:Class>
     
 
@@ -7643,14 +7710,6 @@ Specific commodities will be listed in this group with their code nos. according
     
 
 
-    <!-- http://purl.org/heals/food-explanation-ontology/FoodPreferences -->
-
-    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/FoodPreferences">
-        <rdfs:label>food preferences</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/heals/food-explanation-ontology/ForbiddenFoodCharacteristic -->
 
     <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/ForbiddenFoodCharacteristic">
@@ -7665,8 +7724,9 @@ Specific commodities will be listed in this group with their code nos. according
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeFoodCharacteristic"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeUserCharacteristic"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:label>Forbidden Food Characteristic</rdfs:label>
     </owl:Class>
     
 
@@ -7674,15 +7734,7 @@ Specific commodities will be listed in this group with their code nos. according
     <!-- http://purl.org/heals/food-explanation-ontology/Goal -->
 
     <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/Goal">
-        <rdfs:label>goal</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/heals/food-explanation-ontology/GoalCharacteristic -->
-
-    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/GoalCharacteristic">
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
+        <rdfs:label>Goal</rdfs:label>
     </owl:Class>
     
 
@@ -7701,7 +7753,7 @@ Specific commodities will be listed in this group with their code nos. according
                                 <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
                                 <owl:withRestrictions rdf:parseType="Collection">
                                     <rdf:Description>
-                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">31</xsd:minInclusive>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.9595</xsd:minInclusive>
                                     </rdf:Description>
                                     <rdf:Description>
                                         <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</xsd:maxInclusive>
@@ -7714,6 +7766,132 @@ Specific commodities will be listed in this group with their code nos. according
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/HighBudget"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Budget Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/HighCalorieFood -->
+
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/HighCalorieFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isLowCalorie"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCalorieDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Calorie Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/HighCarbFood -->
+
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/HighCarbFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isLowCarb"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCarbDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Carb Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/HighFatFood -->
+
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/HighFatFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isLowFat"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/HighFatDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Fat Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/HighFolateFood -->
+
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/HighFolateFood">
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/recommendedBy"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/PregnancyDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Folate Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/HighProteinFood -->
+
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/HighProteinFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isLowProtein"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/HighProteinDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>High Protein Food</rdfs:label>
     </owl:Class>
     
 
@@ -7725,23 +7903,57 @@ Specific commodities will be listed in this group with their code nos. according
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
-                    <owl:Class>
-                        <owl:intersectionOf rdf:parseType="Collection">
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
-                                <owl:someValuesFrom rdf:resource="http://purl.org/heals/food-explanation-ontology/Budget"/>
-                            </owl:Restriction>
-                            <owl:Restriction>
-                                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isBudgetFor"/>
-                                <owl:someValuesFrom rdf:resource="https://purl.org/heals/eo#user"/>
-                            </owl:Restriction>
-                        </owl:intersectionOf>
-                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/heals/food-explanation-ontology/Budget"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isBudgetFor"/>
+                                        <owl:someValuesFrom rdf:resource="https://purl.org/heals/eo#user"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/PositiveUserCharacteristic"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:label>In Budget Characteristic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/InDietCharacteristic -->
+
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/InDietCharacteristic">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://purl.org/heals/food-explanation-ontology/Diet"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isDietFor"/>
+                                        <owl:someValuesFrom rdf:resource="https://purl.org/heals/eo#user"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/PositiveUserCharacteristic"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:label>In Diet Characteristic</rdfs:label>
     </owl:Class>
     
 
@@ -7749,7 +7961,6 @@ Specific commodities will be listed in this group with their code nos. according
     <!-- http://purl.org/heals/food-explanation-ontology/LikedFoodCharacteristic -->
 
     <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/LikedFoodCharacteristic">
-        <owl:equivalentClass rdf:resource="http://purl.org/heals/food-explanation-ontology/LikedFoods"/>
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
@@ -7761,31 +7972,9 @@ Specific commodities will be listed in this group with their code nos. according
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/FoodPreferences"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/PositiveUserCharacteristic"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/heals/food-explanation-ontology/LikedFoods -->
-
-    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/LikedFoods">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/likedBy"/>
-                        <owl:someValuesFrom rdf:resource="https://purl.org/heals/eo#user"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/FoodPreferences"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/PositiveUserCharacteristic"/>
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
-        <rdfs:label>liked foods</rdfs:label>
+        <rdfs:label>Liked Food Characteristic</rdfs:label>
     </owl:Class>
     
 
@@ -7806,6 +7995,8 @@ Specific commodities will be listed in this group with their code nos. according
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/SystemCharacteristic"/>
         <rdfs:subClassOf rdf:resource="http://semanticscience.org/resource/SIO_000414"/>
+        <rdfs:label>Location Characteristic</rdfs:label>
+        <prov:definition>the location of the system</prov:definition>
     </owl:Class>
     
 
@@ -7827,7 +8018,7 @@ Specific commodities will be listed in this group with their code nos. according
                                         <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</xsd:minInclusive>
                                     </rdf:Description>
                                     <rdf:Description>
-                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</xsd:maxInclusive>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.557</xsd:maxInclusive>
                                     </rdf:Description>
                                 </owl:withRestrictions>
                             </rdfs:Datatype>
@@ -7836,6 +8027,7 @@ Specific commodities will be listed in this group with their code nos. according
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/InBudgetCharacteristic"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -7843,14 +8035,137 @@ Specific commodities will be listed in this group with their code nos. according
                 <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/LowBudget"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:label>Low Budget Food</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/heals/food-explanation-ontology/LowerCholestrol -->
+    <!-- http://purl.org/heals/food-explanation-ontology/LowCalorieFood -->
 
-    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/LowerCholestrol">
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal"/>
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/LowCalorieFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isLowCalorie"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Low Calorie Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/LowCarbFood -->
+
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/LowCarbFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isLowCarb"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCarbDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Low Carb Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/LowFatFood -->
+
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/LowFatFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isLowFat"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/LowFatDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Low Fat Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/LowProteinFood -->
+
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/LowProteinFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isLowProtein"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/LowProteinDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Low Protein Food</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/LowSodiumFood -->
+
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/LowSodiumFood">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/heals/food/Food"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/isLowSodium"/>
+                        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</owl:hasValue>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/LowSodiumDiet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Low Sodium Food</rdfs:label>
     </owl:Class>
     
 
@@ -7869,10 +8184,10 @@ Specific commodities will be listed in this group with their code nos. according
                                 <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
                                 <owl:withRestrictions rdf:parseType="Collection">
                                     <rdf:Description>
-                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</xsd:minInclusive>
+                                        <xsd:minExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2.557</xsd:minExclusive>
                                     </rdf:Description>
                                     <rdf:Description>
-                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</xsd:maxInclusive>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.9595</xsd:maxInclusive>
                                     </rdf:Description>
                                 </owl:withRestrictions>
                             </rdfs:Datatype>
@@ -7882,14 +8197,23 @@ Specific commodities will be listed in this group with their code nos. according
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/componentOf"/>
+                <owl:hasValue rdf:resource="http://purl.org/heals/food-explanation-ontology/MediumBudget"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label>Medium Budget Food</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/heals/food-explanation-ontology/NegativeFoodCharacteristic -->
+    <!-- http://purl.org/heals/food-explanation-ontology/NegativeUserCharacteristic -->
 
-    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/NegativeFoodCharacteristic">
+    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/NegativeUserCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/UserCharacteristic"/>
+        <rdfs:label>Negative User Characteristic</rdfs:label>
+        <prov:definition>characteristics of the user that would be detrimental to a recommendation</prov:definition>
     </owl:Class>
     
 
@@ -7898,6 +8222,7 @@ Specific commodities will be listed in this group with their code nos. according
 
     <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/NutrientMeasurement">
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food/Measurement"/>
+        <rdfs:label>Nutrient Measurement</rdfs:label>
     </owl:Class>
     
 
@@ -7905,7 +8230,8 @@ Specific commodities will be listed in this group with their code nos. according
     <!-- http://purl.org/heals/food-explanation-ontology/OutBudgetCharacteristic -->
 
     <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/OutBudgetCharacteristic">
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeFoodCharacteristic"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeUserCharacteristic"/>
+        <rdfs:label>Out Budget Characteristic</rdfs:label>
     </owl:Class>
     
 
@@ -7922,6 +8248,8 @@ Specific commodities will be listed in this group with their code nos. according
 
     <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/PositiveUserCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/UserCharacteristic"/>
+        <rdfs:label>Positive User Characteristic</rdfs:label>
+        <prov:definition>characteristics of the user that would be support a recommendation</prov:definition>
     </owl:Class>
     
 
@@ -7965,6 +8293,8 @@ Specific commodities will be listed in this group with their code nos. according
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Season"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/SystemCharacteristic"/>
+        <rdfs:label>Season Characteristic</rdfs:label>
+        <prov:definition>the current season where the system is located</prov:definition>
     </owl:Class>
     
 
@@ -8009,6 +8339,8 @@ Specific commodities will be listed in this group with their code nos. according
 
     <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/SystemCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
+        <rdfs:label>System Characteristic</rdfs:label>
+        <prov:definition>elements that describe the sytem that outputs the recommendation</prov:definition>
     </owl:Class>
     
 
@@ -8017,25 +8349,8 @@ Specific commodities will be listed in this group with their code nos. according
 
     <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/UserCharacteristic">
         <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/heals/food-explanation-ontology/WeightGain -->
-
-    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/WeightGain">
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal"/>
-        <owl:disjointWith rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
-        <rdfs:label>weight gain</rdfs:label>
-    </owl:Class>
-    
-
-
-    <!-- http://purl.org/heals/food-explanation-ontology/WeightLoss -->
-
-    <owl:Class rdf:about="http://purl.org/heals/food-explanation-ontology/WeightLoss">
-        <rdfs:subClassOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal"/>
-        <rdfs:label>weight loss</rdfs:label>
+        <rdfs:label>User Characteristic</rdfs:label>
+        <prov:definition>elements that descride the users of the system</prov:definition>
     </owl:Class>
     
 
@@ -32161,7 +32476,7 @@ understanding and knowledge [(McNeil and Krajack, 2008) of how the world works, 
                         <owl:unionOf rdf:parseType="Collection">
                             <owl:Class>
                                 <owl:intersectionOf rdf:parseType="Collection">
-                                    <rdf:Description rdf:about="http://purl.org/heals/food-explanation-ontology/NegativeFoodCharacteristic"/>
+                                    <rdf:Description rdf:about="http://purl.org/heals/food-explanation-ontology/NegativeUserCharacteristic"/>
                                     <owl:Restriction>
                                         <owl:onProperty rdf:resource="http://purl.org/heals/food-explanation-ontology/supports"/>
                                         <owl:someValuesFrom rdf:resource="http://purl.org/heals/food-explanation-ontology/Parameter"/>
@@ -33246,6 +33561,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash_Soup"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Cauliflower"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/CauliflowerPotatoCurry"/>
+        <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatCauliflowerPotatoCurry"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup?"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?"/>
@@ -33268,6 +33584,59 @@ For example, we explain why humans can do math calculations (Explanandum) by the
     
 
 
+    <!-- http://purl.org/heals/food-explanation-ontology/Broccoli -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/Broccoli">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/AllergicFoodCharacteristic"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeUserCharacteristic"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/UserCharacteristic"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food/Ingredient"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
+        <rdf:type rdf:resource="https://purl.org/heals/eo#Foil"/>
+        <rdf:type rdf:resource="https://purl.org/heals/eo#knowledge"/>
+        <food-explanation-ontology:isAllergenFor rdf:resource="http://purl.org/heals/food-explanation-ontology/UserA"/>
+        <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
+        <food-explanation-ontology:isIngredientOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <food-explanation-ontology:opposes rdf:resource="http://purl.org/heals/food-explanation-ontology/UserA"/>
+        <food-explanation-ontology:supports rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
+        <food-explanation-ontology:isInternal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</food-explanation-ontology:isInternal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Parameter"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
+        <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
+        <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
+        <food-explanation-ontology:isSupportedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
+        <food:hasIngredient rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <food-explanation-ontology:isInternal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</food-explanation-ontology:isInternal>
+        <rdfs:label>Broccoli Cheddar Soup</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/heals/food-explanation-ontology/Butternut_Squash -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/Butternut_Squash">
@@ -33276,8 +33645,10 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/Autumn"/>
         <food-explanation-ontology:isAvailibleIn rdf:resource="http://purl.org/heals/food-explanation-ontology/Autumn"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash_Soup"/>
+        <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup?"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?"/>
+        <food-explanation-ontology:isIngredientOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash_Soup"/>
         <food-explanation-ontology:isSupportedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Autumn"/>
         <food-explanation-ontology:supports rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash_Soup"/>
         <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash"/>
@@ -33288,6 +33659,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash"/>
         <food-explanation-ontology:isInternal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</food-explanation-ontology:isInternal>
+        <rdfs:label>Butternut Squash</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33296,12 +33668,13 @@ For example, we explain why humans can do math calculations (Explanandum) by the
 
     <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/Butternut_Squash_Soup">
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/LowBudgetFood"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/HighBudgetFood"/>
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Parameter"/>
         <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
-        <food-explanation-ontology:componentOf rdf:resource="http://purl.org/heals/food-explanation-ontology/LowBudget"/>
+        <food-explanation-ontology:componentOf rdf:resource="http://purl.org/heals/food-explanation-ontology/HighBudget"/>
         <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/Autumn"/>
         <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash"/>
+        <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup?"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?"/>
         <food-explanation-ontology:isSupportedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Autumn"/>
@@ -33316,6 +33689,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash_Soup"/>
         <food-explanation-ontology:hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</food-explanation-ontology:hasPrice>
         <food-explanation-ontology:isInternal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</food-explanation-ontology:isInternal>
+        <rdfs:label>Butternut Squash Soup</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33331,6 +33705,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <food-explanation-ontology:isAvailibleIn rdf:resource="http://purl.org/heals/food-explanation-ontology/Autumn"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/CauliflowerPotatoCurry"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatCauliflowerPotatoCurry"/>
+        <food-explanation-ontology:isIngredientOf rdf:resource="http://purl.org/heals/food-explanation-ontology/CauliflowerPotatoCurry"/>
         <food-explanation-ontology:isSupportedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Autumn"/>
         <food-explanation-ontology:supports rdf:resource="http://purl.org/heals/food-explanation-ontology/CauliflowerPotatoCurry"/>
         <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/Cauliflower"/>
@@ -33368,6 +33743,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/CauliflowerPotatoCurry"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/CauliflowerPotatoCurry"/>
         <food-explanation-ontology:isInternal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</food-explanation-ontology:isInternal>
+        <rdfs:label>Cauliflower Potato Curry</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33379,9 +33755,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400666"/>
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400775"/>
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/FoodPreferences"/>
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/LikedFoodCharacteristic"/>
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/LikedFoods"/>
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/PositiveUserCharacteristic"/>
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/UserCharacteristic"/>
         <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
@@ -33402,6 +33776,29 @@ For example, we explain why humans can do math calculations (Explanandum) by the
     
 
 
+    <!-- http://purl.org/heals/food-explanation-ontology/DeangeloVickers -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/DeangeloVickers">
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000000"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000498"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000776"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_001353"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event"/>
+        <rdf:type rdf:resource="https://purl.org/heals/eo#user"/>
+        <food-explanation-ontology:accomplishedGoal rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
+        <food-explanation-ontology:hasDiet rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCarbDiet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/DeangeloVickers"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/DeangeloVickers"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/DeangeloVickers"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/DeangeloVickers"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/DeangeloVickers"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/DeangeloVickers"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/DeangeloVickers"/>
+        <rdfs:label>Deangelo Vickers</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/heals/food-explanation-ontology/Dollars -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/Dollars">
@@ -33412,21 +33809,6 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/Dollars"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/Dollars"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/Dollars"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/heals/food-explanation-ontology/Goal-Characteristic -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/Goal-Characteristic">
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
-        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal-Characteristic"/>
-        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal-Characteristic"/>
-        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal-Characteristic"/>
-        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal-Characteristic"/>
-        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal-Characteristic"/>
-        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal-Characteristic"/>
-        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal-Characteristic"/>
     </owl:NamedIndividual>
     
 
@@ -33464,6 +33846,118 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighBudget"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighBudget"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighBudget"/>
+        <rdfs:label>High Budget</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/HighCalorieDiet -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/HighCalorieDiet">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Diet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCalorieDiet"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCalorieDiet"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCalorieDiet"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCalorieDiet"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCalorieDiet"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCalorieDiet"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCalorieDiet"/>
+        <rdfs:label>High Calorie Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/HighCarbDiet -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/HighCarbDiet">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Diet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCarbDiet"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCarbDiet"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCarbDiet"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCarbDiet"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCarbDiet"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCarbDiet"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighCarbDiet"/>
+        <rdfs:label>High Carb Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/HighFatDiet -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/HighFatDiet">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Diet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighFatDiet"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighFatDiet"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighFatDiet"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighFatDiet"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighFatDiet"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighFatDiet"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighFatDiet"/>
+        <rdfs:label>High Fat Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/HighProteinDiet -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/HighProteinDiet">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Diet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighProteinDiet"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighProteinDiet"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighProteinDiet"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighProteinDiet"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighProteinDiet"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighProteinDiet"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/HighProteinDiet"/>
+        <rdfs:label>High Protien Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/JimHalpert -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/JimHalpert">
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000000"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000498"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000776"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_001353"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event"/>
+        <rdf:type rdf:resource="https://purl.org/heals/eo#user"/>
+        <food-explanation-ontology:accomplishedGoal rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerBloodPressure"/>
+        <food-explanation-ontology:hasDiet rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/JimHalpert"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/JimHalpert"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/JimHalpert"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/JimHalpert"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/JimHalpert"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/JimHalpert"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/JimHalpert"/>
+        <rdfs:label>Jim Halpert</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/KevinMalone -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/KevinMalone">
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000000"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000498"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000776"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_001353"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event"/>
+        <rdf:type rdf:resource="https://purl.org/heals/eo#user"/>
+        <food-explanation-ontology:hasDiet rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <food-explanation-ontology:hasGoal rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerBloodPressure"/>
+        <food-explanation-ontology:hasGoal rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/KevinMalone"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/KevinMalone"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/KevinMalone"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/KevinMalone"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/KevinMalone"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/KevinMalone"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/KevinMalone"/>
+        <rdfs:label>Kevin Malone</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33482,6 +33976,122 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowBudget"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowBudget"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowBudget"/>
+        <rdfs:label>Low Budget</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/LowCalorieDiet -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Diet"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Parameter"/>
+        <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <rdfs:label>Low Calorie Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/LowCarbDiet -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/LowCarbDiet">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Diet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCarbDiet"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCarbDiet"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCarbDiet"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCarbDiet"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCarbDiet"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCarbDiet"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCarbDiet"/>
+        <rdfs:label>Low Carb Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/LowFatDiet -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/LowFatDiet">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Diet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowFatDiet"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowFatDiet"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowFatDiet"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowFatDiet"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowFatDiet"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowFatDiet"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowFatDiet"/>
+        <rdfs:label>Low Fat Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/LowProteinDiet -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/LowProteinDiet">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Diet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowProteinDiet"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowProteinDiet"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowProteinDiet"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowProteinDiet"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowProteinDiet"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowProteinDiet"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowProteinDiet"/>
+        <rdfs:label>Low Protien Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/LowSodiumDiet -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/LowSodiumDiet">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Diet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowSodiumDiet"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowSodiumDiet"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowSodiumDiet"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowSodiumDiet"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowSodiumDiet"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowSodiumDiet"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowSodiumDiet"/>
+        <rdfs:label>Low Sodium Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/LowerBloodPressure -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/LowerBloodPressure">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerBloodPressure"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerBloodPressure"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerBloodPressure"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerBloodPressure"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerBloodPressure"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerBloodPressure"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerBloodPressure"/>
+        <rdfs:label>Lower Blood Pressure</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/LowerCholestrol -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/LowerCholestrol">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerCholestrol"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerCholestrol"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerCholestrol"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerCholestrol"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerCholestrol"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerCholestrol"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/LowerCholestrol"/>
+        <rdfs:label>Lower Cholestrol</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33499,6 +34109,44 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/MediumBudget"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/MediumBudget"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/MediumBudget"/>
+        <rdfs:label>Medium Budget</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/MichaelScott -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/MichaelScott">
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/MichaelScott"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/MichaelScott"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/MichaelScott"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/MichaelScott"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/MichaelScott"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/MichaelScott"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/MichaelScott"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/PamBeesly -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/PamBeesly">
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000000"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000498"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000776"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_001353"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event"/>
+        <rdf:type rdf:resource="https://purl.org/heals/eo#user"/>
+        <food-explanation-ontology:accomplishedGoal rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
+        <food-explanation-ontology:hasDiet rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/PamBeesly"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/PamBeesly"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/PamBeesly"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/PamBeesly"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/PamBeesly"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/PamBeesly"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/PamBeesly"/>
+        <rdfs:label>Pam Beesly</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33529,6 +34177,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/PescatarianDiet"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/PescatarianDiet"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/PescatarianDiet"/>
+        <rdfs:label>Pescatarian Diet</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33542,6 +34191,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <rdf:type rdf:resource="http://purl.org/heals/food/Ingredient"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/CauliflowerPotatoCurry"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatCauliflowerPotatoCurry"/>
+        <food-explanation-ontology:isIngredientOf rdf:resource="http://purl.org/heals/food-explanation-ontology/CauliflowerPotatoCurry"/>
         <food-explanation-ontology:supports rdf:resource="http://purl.org/heals/food-explanation-ontology/CauliflowerPotatoCurry"/>
         <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/Potato"/>
         <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/Potato"/>
@@ -33561,9 +34211,13 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Diet"/>
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Parameter"/>
+        <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/SpinachFritata"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Sushi"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/WhatIfIWasPregnant"/>
         <food-explanation-ontology:isOpposedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Sushi"/>
+        <food-explanation-ontology:isSupportedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <food-explanation-ontology:recommends rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
         <food:forbids rdf:resource="http://purl.org/heals/food-explanation-ontology/Sushi"/>
         <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/PregnancyDiet"/>
         <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/PregnancyDiet"/>
@@ -33572,6 +34226,54 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/PregnancyDiet"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/PregnancyDiet"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/PregnancyDiet"/>
+        <rdfs:label>Preegnancy Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/Spinach -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/Spinach">
+        <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400644"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/HighFolateFood"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food/Ingredient"/>
+        <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/PregnancyDiet"/>
+        <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/SpinachFritata"/>
+        <food-explanation-ontology:isIngredientOf rdf:resource="http://purl.org/heals/food-explanation-ontology/SpinachFritata"/>
+        <food-explanation-ontology:recommendedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/PregnancyDiet"/>
+        <food-explanation-ontology:supports rdf:resource="http://purl.org/heals/food-explanation-ontology/PregnancyDiet"/>
+        <food-explanation-ontology:supports rdf:resource="http://purl.org/heals/food-explanation-ontology/SpinachFritata"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <food-explanation-ontology:isInternal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</food-explanation-ontology:isInternal>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/SpinachFritata -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/SpinachFritata">
+        <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
+        <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/PregnancyDiet"/>
+        <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <food-explanation-ontology:isSupportedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <food:hasIngredient rdf:resource="http://purl.org/heals/food-explanation-ontology/Spinach"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/SpinachFritata"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/SpinachFritata"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/SpinachFritata"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/SpinachFritata"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/SpinachFritata"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/SpinachFritata"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/SpinachFritata"/>
+        <food-explanation-ontology:isInternal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</food-explanation-ontology:isInternal>
+        <rdfs:label>Spinach Frittata</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33614,28 +34316,42 @@ For example, we explain why humans can do math calculations (Explanandum) by the
     
 
 
+    <!-- http://purl.org/heals/food-explanation-ontology/StanleyHudson -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/StanleyHudson">
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000000"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000498"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000776"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_001353"/>
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/participation.owl#Event"/>
+        <rdf:type rdf:resource="https://purl.org/heals/eo#user"/>
+        <food-explanation-ontology:accomplishedGoal rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
+        <food-explanation-ontology:hasDiet rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/StanleyHudson"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/StanleyHudson"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/StanleyHudson"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/StanleyHudson"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/StanleyHudson"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/StanleyHudson"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/StanleyHudson"/>
+        <rdfs:label>Stanley Hudson</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/heals/food-explanation-ontology/Strawberry -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/Strawberry">
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400644"/>
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/AllergicFoodCharacteristic"/>
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Allergies"/>
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/FoodPreferences"/>
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeFoodCharacteristic"/>
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/UserCharacteristic"/>
         <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
         <rdf:type rdf:resource="http://purl.org/heals/food/Ingredient"/>
-        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/ont/dul/DUL.owl#Theory"/>
-        <rdf:type rdf:resource="https://purl.org/heals/eo#Foil"/>
-        <rdf:type rdf:resource="https://purl.org/heals/eo#knowledge"/>
         <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/Spring"/>
-        <food-explanation-ontology:isAllergenFor rdf:resource="http://purl.org/heals/food-explanation-ontology/UserA"/>
         <food-explanation-ontology:isAvailibleIn rdf:resource="http://purl.org/heals/food-explanation-ontology/Spring"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Strawberry_Tart"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?"/>
+        <food-explanation-ontology:isIngredientOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Strawberry_Tart"/>
         <food-explanation-ontology:isSupportedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Spring"/>
-        <food-explanation-ontology:opposes rdf:resource="http://purl.org/heals/food-explanation-ontology/UserA"/>
         <food-explanation-ontology:supports rdf:resource="http://purl.org/heals/food-explanation-ontology/Strawberry_Tart"/>
         <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/Strawberry"/>
         <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/Strawberry"/>
@@ -33669,6 +34385,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/Strawberry_Tart"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/Strawberry_Tart"/>
         <food-explanation-ontology:isInternal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</food-explanation-ontology:isInternal>
+        <rdfs:label>Strawberry Tart</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33727,21 +34444,6 @@ For example, we explain why humans can do math calculations (Explanandum) by the
     
 
 
-    <!-- http://purl.org/heals/food-explanation-ontology/System-Characteristic -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/System-Characteristic">
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
-        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/System-Characteristic"/>
-        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/System-Characteristic"/>
-        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/System-Characteristic"/>
-        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/System-Characteristic"/>
-        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/System-Characteristic"/>
-        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/System-Characteristic"/>
-        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/System-Characteristic"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://purl.org/heals/food-explanation-ontology/SystemA -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/SystemA">
@@ -33769,7 +34471,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <rdf:type rdf:resource="http://purl.obolibrary.org/obo/FOODON_03400656"/>
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/ForbiddenFoodCharacteristic"/>
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeFoodCharacteristic"/>
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/NegativeUserCharacteristic"/>
         <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/UserCharacteristic"/>
         <rdf:type rdf:resource="http://purl.org/heals/food/Food"/>
         <rdf:type rdf:resource="http://purl.org/heals/food/Ingredient"/>
@@ -33780,6 +34482,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/VeganDiet"/>
         <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/VegetarianDiet"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Sushi"/>
+        <food-explanation-ontology:isIngredientOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Sushi"/>
         <food-explanation-ontology:opposes rdf:resource="http://purl.org/heals/food-explanation-ontology/UserA"/>
         <food-explanation-ontology:opposes rdf:resource="http://purl.org/heals/food-explanation-ontology/VeganDiet"/>
         <food-explanation-ontology:opposes rdf:resource="http://purl.org/heals/food-explanation-ontology/VegetarianDiet"/>
@@ -33792,21 +34495,6 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/Tuna"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/Tuna"/>
         <food-explanation-ontology:isInternal rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</food-explanation-ontology:isInternal>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/heals/food-explanation-ontology/User-Characteristic -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/User-Characteristic">
-        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Characteristic"/>
-        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/User-Characteristic"/>
-        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/User-Characteristic"/>
-        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/User-Characteristic"/>
-        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/User-Characteristic"/>
-        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/User-Characteristic"/>
-        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/User-Characteristic"/>
-        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/User-Characteristic"/>
     </owl:NamedIndividual>
     
 
@@ -33824,12 +34512,12 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <food-explanation-ontology:hasBudget rdf:resource="http://purl.org/heals/food-explanation-ontology/LowBudget"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Sushi"/>
         <food-explanation-ontology:isCharacteristicOf rdf:resource="http://purl.org/heals/food-explanation-ontology/Tuna"/>
-        <food-explanation-ontology:isOpposedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Strawberry"/>
+        <food-explanation-ontology:isOpposedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
         <food-explanation-ontology:isOpposedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Tuna"/>
         <food-explanation-ontology:isSupportedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/Cheese"/>
         <food-explanation-ontology:likes rdf:resource="http://purl.org/heals/food-explanation-ontology/Cheese"/>
         <food:forbids rdf:resource="http://purl.org/heals/food-explanation-ontology/Tuna"/>
-        <food:isAllergicTo rdf:resource="http://purl.org/heals/food-explanation-ontology/Strawberry"/>
+        <food:isAllergicTo rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
         <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/UserA"/>
         <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/UserA"/>
         <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/UserA"/>
@@ -33865,6 +34553,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/VeganDiet"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/VeganDiet"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/VeganDiet"/>
+        <rdfs:label>Vegan Diet</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33885,6 +34574,23 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/VegetarianDiet"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/VegetarianDiet"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/VegetarianDiet"/>
+        <rdfs:label>Vegetarian Diet</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/WeightLoss -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/WeightLoss">
+        <rdf:type rdf:resource="http://purl.org/heals/food-explanation-ontology/Goal"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/WeightLoss"/>
+        <rdfs:label>Weight Loss</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33919,6 +34625,30 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhatIfItWereSpring"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhatIfItWereSpring"/>
         <rdfs:label>What if it were spring?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup">
+        <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/Autumn"/>
+        <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli"/>
+        <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash"/>
+        <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash_Soup"/>
+        <food-explanation-ontology:hasParameter rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <food-explanation-ontology:hasParameter rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash_Soup"/>
+        <food-explanation-ontology:hasPrimaryParameter rdf:resource="http://purl.org/heals/food-explanation-ontology/Butternut_Squash_Soup"/>
+        <food-explanation-ontology:hasSecondaryParameter rdf:resource="http://purl.org/heals/food-explanation-ontology/Broccoli_Cheddar_Soup"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyEatButternutSquashSoupOverBroccoliCheddarSoup"/>
+        <rdfs:label>Why eat Butternut Squash Soup over Broccoli Cheddar Soup?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -33984,6 +34714,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/What_if_I_was_Vegan?"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/What_if_I_was_Vegan?"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/What_if_I_was_Vegan?"/>
+        <rdfs:label>What if I was vegan?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -34000,6 +34731,25 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/What_if_it_were_spring?"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/What_if_it_were_spring?"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/What_if_it_were_spring?"/>
+        <rdfs:label>What if it were spring?</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet? -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?">
+        <food-explanation-ontology:askedBy rdf:resource="http://purl.org/heals/food-explanation-ontology/KevinMalone"/>
+        <food-explanation-ontology:hasCharacteristic rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <food-explanation-ontology:hasParameter rdf:resource="http://purl.org/heals/food-explanation-ontology/LowCalorieDiet"/>
+        <resource:SIO_000001 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?"/>
+        <resource:SIO_000028 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?"/>
+        <resource:SIO_000061 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?"/>
+        <resource:SIO_000068 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?"/>
+        <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?"/>
+        <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?"/>
+        <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/WhyFollowLowCalorieDiet?"/>
+        <rdfs:label>Why follow a low calorie diet?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -34018,6 +34768,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup?"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup?"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup?"/>
+        <rdfs:label>Why eat Butternut Squash Soup?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -34042,6 +34793,7 @@ For example, we explain why humans can do math calculations (Explanandum) by the
         <resource:SIO_000145 rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?"/>
         <resource:SIO_000322 rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?"/>
         <resource:SIO_000325 rdf:resource="http://purl.org/heals/food-explanation-ontology/Why_eat_Butternut_Squash_Soup_over_a_Strawberry_Tart?"/>
+        <rdfs:label>Why eat Butternut Squash Soup over a Strawberry Tart?</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -34442,14 +35194,8 @@ AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIAB
         <rdf:type rdf:resource="https://purl.org/heals/eo#ContrastiveExplanation"/>
         <explanationPattern:isBasedOn rdf:resource="https://purl.org/heals/eo#SystemRecExampleForContrastiveExpA"/>
         <explanationPattern:isBasedOn rdf:resource="https://purl.org/heals/eo#SystemRecExampleForContrastiveExpB"/>
-        <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#AITaskExample"/>
-        <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#ContextualKnowledgePatientA"/>
         <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#ContrastiveExpInstance"/>
         <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#ContrastiveQuestion"/>
-        <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#GuidelineEvidence"/>
-        <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#HyperglycemiaPatient"/>
-        <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#SystemRecExampleForContrastiveExpA"/>
-        <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#SystemRecExampleForContrastiveExpB"/>
         <resource:SIO_000028 rdf:resource="https://purl.org/heals/eo#ContrastiveExpInstance"/>
         <resource:SIO_000061 rdf:resource="https://purl.org/heals/eo#ContrastiveExpInstance"/>
         <resource:SIO_000068 rdf:resource="https://purl.org/heals/eo#ContrastiveExpInstance"/>
@@ -34482,13 +35228,8 @@ AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIAB
         <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000483"/>
         <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000776"/>
         <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#AITaskExample"/>
-        <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#ContextualKnowledgePatientA"/>
         <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#ContrastiveExpInstance"/>
         <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#ContrastiveQuestion"/>
-        <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#GuidelineEvidence"/>
-        <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#HyperglycemiaPatient"/>
-        <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#SystemRecExampleForContrastiveExpA"/>
-        <resource:SIO_000001 rdf:resource="https://purl.org/heals/eo#SystemRecExampleForContrastiveExpB"/>
         <resource:SIO_000028 rdf:resource="https://purl.org/heals/eo#ContrastiveQuestion"/>
         <resource:SIO_000061 rdf:resource="https://purl.org/heals/eo#ContrastiveQuestion"/>
         <resource:SIO_000062 rdf:resource="https://purl.org/heals/eo#AITaskExample"/>
@@ -37794,6 +38535,10 @@ AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIAB
     <rdf:Description rdf:about="http://purl.org/dc/terms/alternativeName">
         <dc:identifier>alternativeName</dc:identifier>
     </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/heals/food-explanation-ontology/Parameter">
+        <prov:definition>A characteristic of a question</prov:definition>
+        <rdfs:label>Parameter</rdfs:label>
+    </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/heals/food/User">
         <rdfs:label>user</rdfs:label>
         <skos:scopeNote>top-level class</skos:scopeNote>
@@ -37826,8 +38571,8 @@ AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIAB
         <skos:definition>to store (data) in a computer or on a storage device</skos:definition>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.org/heals/food/hasTexture">
-        <terms:source>Dictionary.com, &quot;texture.&quot; [Online]. Available: https://www.dictionary.com/browse/texture?s=t. [Accessed Oct. 13, 2018]</terms:source>
         <rdfs:label>has texture</rdfs:label>
+        <terms:source>Dictionary.com, &quot;texture.&quot; [Online]. Available: https://www.dictionary.com/browse/texture?s=t. [Accessed Oct. 13, 2018]</terms:source>
         <skos:scopeNote>ingredient property</skos:scopeNote>
         <skos:definition>indicates that this item has this texture</skos:definition>
     </rdf:Description>
@@ -37840,8 +38585,8 @@ AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIAB
     <rdf:Description rdf:about="http://purl.org/heals/food/serves">
         <rdfs:label>serves</rdfs:label>
         <skos:definition>used to indicate how much food a recipe produces</skos:definition>
-        <terms:source>&quot;Serve definition and meaning,&quot; Collins English Dictionary. Available: https://www.collinsdictionary.com/dictionary/english/serve [Accessed 27-Oct-2018].</terms:source>
         <skos:scopeNote>recipe property</skos:scopeNote>
+        <terms:source>&quot;Serve definition and meaning,&quot; Collins English Dictionary. Available: https://www.collinsdictionary.com/dictionary/english/serve [Accessed 27-Oct-2018].</terms:source>
     </rdf:Description>
     <rdf:Description rdf:about="http://semanticscience.org/resource/narrowerThan">
         <dc:identifier>narrowerThan</dc:identifier>
@@ -38014,8 +38759,8 @@ AND NONINFRINGEMENT.  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIAB
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#notation">
         <rdfs:isDefinedBy rdf:resource="http://www.w3.org/2004/02/skos/core"/>
-        <skos:definition xml:lang="en">A notation, also known as classification code, is a string of characters such as &quot;T58.5&quot; or &quot;303.4833&quot; used to uniquely identify a concept within the scope of a given concept scheme.</skos:definition>
         <skos:scopeNote xml:lang="en">By convention, skos:notation is used with a typed literal in the object position of the triple.</skos:scopeNote>
+        <skos:definition xml:lang="en">A notation, also known as classification code, is a string of characters such as &quot;T58.5&quot; or &quot;303.4833&quot; used to uniquely identify a concept within the scope of a given concept scheme.</skos:definition>
         <rdfs:label xml:lang="en">notation</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.w3.org/2004/02/skos/core#note">
