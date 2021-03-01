@@ -22,14 +22,14 @@ title: Food Explanation Ontology
  <img src ="../images/properties.png" style="width:100%; height:100%">  
  <caption>Fig. 2: The property structure similarly has subproperties. We characterize properties as supporting and opposing and also as types of characteristics. We also define inverse of as a type of property, in order to save time on duplication of data. </caption>
  
- <img src ="../images/contextualModel.png" style="width:70%; height:70%">  
+ <img src ="../images/contextualModel1.png" style="width:70%; height:70%">  
  <caption>Fig. 3: This is a model of what the process to get the answer to the first competency question. Her we illustrate how these modeling choices work together to help us solve our competency questions. The image details how the ontology appears (after reasoning) with the classes necessary to answer the first competency question. The light blue boxes illustrate the relationships between instances and the dark blue boxes contain classes and their pertinent restrictions. </caption>  
   
   <h3 id="ontologylinks">Ontology Links</h3>
   <ul>
   <li>Ontology documentation generated using the <a href="https://github.com/dgarijo/Widoco">Widoco</a> tool can be browsed at: <a href="https://tetherless-world.github.io/food-explanation-ontology/WidocoDocumentation/index-en.html">https://tetherless-world.github.io/food-explanation-ontology/WidocoDocumentation/index-en.html</a></li>
   <li>Ontology can be accessed from <a href="https://purl.org/heals/food-explanation-ontology/">https://purl.org/heals/food-explanation-ontology</a></li>
-  <li class="note">We are aware of issues with the PURL service at the moment, if there are issues, please use the github link instead. </li>
+  <li class="note">We are aware of issues with the PURL service at the moment, if there are issues, please use the <a href="https://github.com/tetherless-world/food-explanation-ontology">github link</a> instead.  </li>
   </ul>
   
   <article class="mb-5" id="ontologymetadata">
