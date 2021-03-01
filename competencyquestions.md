@@ -137,8 +137,8 @@ Where{
 </table>
   </li>
   </ul>
-  </li>
-}
+  </li>}
+
    <li id="question3"><strong>  What if I was pregnant?</strong>
   <ul type = "circle">
     <li> <strong>Query:</strong> <br/>
@@ -178,8 +178,9 @@ WHERE{
 </table>
   </li>
   </ul>
-  </li>
-  <li id="question3"><strong>  Why should I follow a low calorie diet?</strong>
+  </li>}
+  
+  <li id="question4"><strong>  Why should I follow a low calorie diet?</strong>
   <ul type = "circle">
     <li> <strong>Query:</strong> <br/>
       <pre>
