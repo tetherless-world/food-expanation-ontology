@@ -137,7 +137,7 @@ Where{
 </table>
   </li>
   </ul>
-  </li>}
+  </li>
 
    <li id="question3"><strong>  What if I was pregnant?</strong>
   <ul type = "circle">
@@ -174,46 +174,6 @@ WHERE{
     <td>Sushi</td>
     <td></td>
   </tr>
-</tbody>
-</table>
-  </li>
-  </ul>
-  </li>}
-  
-  <li id="question4"><strong>  Why should I follow a low calorie diet?</strong>
-  <ul type = "circle">
-    <li> <strong>Query:</strong> <br/>
-      <pre>
-PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
-PREFIX eo: <http://purl.org/heals/eo#>
-
-SELECT DISTINCT ?goal ((Count( distinct ?accomplishedUsers))/(Count( distinct ?allOtherUsers)) as ?percentAccomplished)
-
-WHERE{
-  
-  ?WhyFollowLowCalorieDiet feo:hasParameter ?diet.
-  ?WhyFollowLowCalorieDiet feo:askedBy ?mainUser.
-  ?mainUser feo:hasGoal ?goal.
-  ?allOtherUsers feo:hasDiet ?diet .
-  FILTER ( ?allOtherUsers != ?mainUser ).
-  ?accomplishedUsers feo:hasDiet ?diet .
-  ?accomplishedUsers feo:accomplishedGoal ?goal.
-}
-GROUP BY ?goal
-Having ((Count( distinct ?accomplishedUsers))/(Count( distinct ?allOtherUsers)) >= .5)
-  <table>
-<thead>
-  <tr>
-    <th>Goals</th>
-    <th>Percent Accomplished</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>Weight Loss</td>
-    <td>.6667</td>
-  </tr>
-
 </tbody>
 </table>
   </li>
