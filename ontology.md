@@ -27,7 +27,7 @@ title: Food Explanation Ontology
   
   <h3 id="ontologylinks">Ontology Links</h3>
   <ul>
-  <li>Ontology documentation generated using the <a href="https://github.com/dgarijo/Widoco">Widoco</a> tool can be browsed at: <a href="https://tetherless-world.github.io/food-explanation-ontology/WidocoDocumentation/index-en.html">https://tetherless-world.github.io/food-explanation-ontology/WidocoDocumentation/index-en.html</a></li>
+  <li>Ontology documentation generated using the <a href="https://github.com/dgarijo/Widoco">Widoco</a> tool can be browsed at: <a href="../WidocoDocumentation/index-en.html">https://tetherless-world.github.io/food-explanation-ontology/WidocoDocumentation/index-en.html</a></li>
   <li>Ontology can be accessed from <a href="https://purl.org/heals/food-explanation-ontology/">https://purl.org/heals/food-explanation-ontology/</a></li>
   <li class="note">We are aware of issues with the PURL service at the moment, if there are issues, please use the <a href="https://github.com/tetherless-world/food-explanation-ontology">github link</a> instead.  </li>
   </ul>
