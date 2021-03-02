@@ -186,17 +186,22 @@ WHERE{
     <li> <strong>Query:</strong> <br/>
       <pre>
 PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
-PREFIX food: <http://purl.org/heals/food/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+PREFIX eo: <http://purl.org/heals/eo#>
 
-SELECT Distinct ?property ?ingredient ?outputs
+SELECT DISTINCT ?goal ((Count( distinct ?accomplishedUsers))/(Count( distinct ?allOtherUsers)) as ?percentAccomplished)
+
 WHERE{
-  feo:WhatIfIWasPregnant  feo:hasParameter ?parameter .
-  ?parameter ?property  ?ingredient .
-  ?property rdfs:subPropertyOf feo:isCharacteristicOf.
-  ?ingredient a food:Food .
-  OPTIONAL { ?ingredient feo:isIngredientOf ?outputs.}
+  
+  ?WhyFollowLowCalorieDiet feo:hasParameter ?diet.
+  ?WhyFollowLowCalorieDiet feo:askedBy ?mainUser.
+  ?mainUser feo:hasGoal ?goal.
+  ?allOtherUsers feo:hasDiet ?diet .
+  FILTER ( ?allOtherUsers != ?mainUser ).
+  ?accomplishedUsers feo:hasDiet ?diet .
+  ?accomplishedUsers feo:accomplishedGoal ?goal.
 }
+GROUP BY ?goal
+Having ((Count( distinct ?accomplishedUsers))/(Count( distinct ?allOtherUsers)) >= .5)
       </pre></li>
       <li><strong>Answer</strong> <br/>
   <table>
@@ -209,7 +214,7 @@ WHERE{
 <tbody>
     <tr>
     <td>Weight Loss</td>
-    <td>Spinach</td>
+    <td>.6667</td>
   </tr>
 </tbody>
 </table>
