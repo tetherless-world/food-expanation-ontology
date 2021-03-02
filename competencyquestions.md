@@ -137,7 +137,7 @@ Where{
   </li>
   </ul>
   </li>
-}
+  
    <li id="question3"><strong>  What if I was pregnant?</strong>
   <ul type = "circle">
     <li> <strong>Query:</strong> <br/>
@@ -189,9 +189,7 @@ PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
 PREFIX eo: <http://purl.org/heals/eo#>
 
 SELECT DISTINCT ?goal ((Count( distinct ?accomplishedUsers))/(Count( distinct ?allOtherUsers)) as ?percentAccomplished)
-
 WHERE{
-  
   ?WhyFollowLowCalorieDiet feo:hasParameter ?diet.
   ?WhyFollowLowCalorieDiet feo:askedBy ?mainUser.
   ?mainUser feo:hasGoal ?goal.
