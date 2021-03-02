@@ -139,46 +139,5 @@ Where{
   </ul>
   </li>
 
-   <li id="question3"><strong>  What if I was pregnant?</strong>
-  <ul type = "circle">
-    <li> <strong>Query:</strong> <br/>
-      <pre>
-PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
-PREFIX food: <http://purl.org/heals/food/>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
-
-SELECT Distinct ?property ?ingredient ?outputs
-WHERE{
-  feo:WhatIfIWasPregnant  feo:hasParameter ?parameter .
-  ?parameter ?property  ?ingredient .
-  ?property rdfs:subPropertyOf feo:isCharacteristicOf.
-  ?ingredient a food:Food .
-  OPTIONAL { ?ingredient feo:isIngredientOf ?outputs.}
-}
-</pre></li>
-  <table>
-<thead>
-  <tr>
-    <th>Property</th>
-    <th>Base Food</th>
-    <th>Inherited Foods</th>
-  </tr>
-</thead>
-<tbody>
-  <tr>
-    <td>recommends</td>
-    <td>Spinach</td>
-    <td>Spinach Frittata</td>
-  </tr>
-    <tr>
-    <td>forbids</td>
-    <td>Sushi</td>
-    <td></td>
-  </tr>
-</tbody>
-</table>
-  </li>
-  </ul>
-  </li>
 </ol>
   </content>
