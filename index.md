@@ -37,26 +37,14 @@ title: Food Explanation Ontology: Semantic Modeling of Food Recommendation Expla
     <th>Resources</th>
     <th>Links</th> 
   </tr>
-   <tr>
-    <td>Protocol Guidance on Usage of Ontology</td>
-    <td><a href="protocol">Protocol</a> </td> 
-  </tr>
   <tr>
     <td>Ontology</td>
     <td><a href="ontology">Food Explanation Ontology</a> </td> 
-  </tr>
-  <tr>
-    <td>Explanation Types</td>
-    <td><a href="modeling#explanationtypes">Modeling</a> </td> 
   </tr>
     <!--<tr>
     <td> </td>
     <td> (b) <a href="./application.html">Faceted Browser</a> </td> 
   </tr>-->
-    <tr>
-    <td>Clincal Example</td>
-    <td><a href="clinicalexample">Example of a Contrastive Explanation</a> </td> 
-  </tr>
    <tr>
     <td>Competency Questions </td>
     <td><a href="competencyquestions#sparql">SPARQL Queries</a> </td> 
