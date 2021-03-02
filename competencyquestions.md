@@ -155,6 +155,7 @@ WHERE{
   ?ingredient a food:Food .
   OPTIONAL { ?ingredient feo:isIngredientOf ?outputs.}
 }
+</pre></li>
   <table>
 <thead>
   <tr>
