@@ -45,17 +45,14 @@ title: Competency Questions
 
 
 
-
 <h3 id="sparql">SPARQL Queries</h3>
 <ol>
   <li id="question1"><strong>Why should I eat Cauliflower Potato Curry?</strong>
   <ul type = "circle">
     <li> <strong>Query:</strong> <br/>
       <pre>
-PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
+prefix feo: <http://purl.org/heals/food-explanation-ontology/>
 PREFIX eo: <http://purl.org/heals/eo#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
 SELECT DISTINCT ?characteristic ?classes
 WHERE{
   ?WhyEatCauliflowerPotatoCurry feo:hasParameter ?parameter .
@@ -87,19 +84,16 @@ WHERE{
   </li>
   </ul>
   </li>
-  <li id="question2"><strong>Why should I eat Butternut Squash Soup over a Broccoli Cheddar Soup?</strong>
+  <li id="question2"><strong>Why should I eat Butternut Squash Soup over a Strawberry Tart?</strong>
   <ul type = "circle">
     <li> <strong>Query:</strong> <br/>
       <pre>
 PREFIX food: <http://purl.org/heals/food/>
 PREFIX eo: <http://purl.org/heals/eo#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-
 Select DISTINCT ?factType ?factA ?foilType ?foilB
 Where{
   ?question feo:hasPrimaryParameter ?parameterA .
   ?question feo:hasSecondaryParameter ?parameterB .
-
   ?parameterA feo:hasCharacteristic ?factA .
   ?factA a <https://purl.org/heals/eo#Fact>.
   ?factA a ?factType .
@@ -113,7 +107,6 @@ Where{
   ?foilType (rdfs:subClassOf+) feo:Characteristic .
   Filter Not Exists{?foilType rdfs:subClassOf <https://purl.org/heals/eo#knowledge> }.
   Filter Not Exists{?t rdfs:subClassOf ?foilType}.
-
 }
       </pre></li>
       <li><strong>Answer</strong> <br/>
@@ -131,13 +124,47 @@ Where{
     <td>SeasonCharacteristic</td>
     <td>Autumn</td>
     <td>AllergicFoodCharacteristic</td>
-    <td>Broccoli</td>
+    <td>Strawberry</td>
   </tr>
 </tbody>
 </table>
   </li>
   </ul>
   </li>
-
+}
+   <li id="question3"><strong>  What if I was pregnant?</strong>
+  <ul type = "circle">
+    <li> <strong>Query:</strong> <br/>
+      <pre>
+PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
+PREFIX food: <http://purl.org/heals/food/>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
+SELECT Distinct ?parameter ?prop ?outputs
+WHERE{
+  feo:WhatIfIWasPregnant  feo:hasParameter ?parameter .
+  ?parameter ?prop  ?outputs .
+  ?prop rdfs:subPropertyOf feo:isCharacteristicOf.
+  ?outputs a food:Food .
+      </pre></li>
+      <li><strong>Answer</strong> <br/>
+  <table>
+<thead>
+  <tr>
+    <th>Parameter</th>
+    <th>Property</th>
+    <th>Outputs</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Pregnancy Diet</td>
+    <td>forbids</td>
+    <td>Sushi</td>
+  </tr>
+</tbody>
+</table>
+  </li>
+  </ul>
+  </li>
 </ol>
   </content>
