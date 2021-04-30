@@ -101,11 +101,13 @@ def runReasoner(path):
 		for c in onto2.classes():
 			for i in c.instances(): 
 				try:
+					# finds all ancestors
 					ancestors = list(set(i.INDIRECT_is_a))
 				except AttributeError:
 					continue
 				for a in ancestors:
 					if not (a == owl.Thing) and not(a == i) and not (type(a) == owlready2.class_construct.And ) and a not in i.is_a:
+						# adds all ancestors as direct parents of the instance
 						i.is_a.append(a)
 						print("instance", i, "added ancestor", a)
 						classesInferred = True
