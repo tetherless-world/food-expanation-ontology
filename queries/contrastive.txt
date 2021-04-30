@@ -1,0 +1,25 @@
+PREFIX feo: <http://purl.org/heals/food-explanation-ontology/>
+PREFIX eo: <http://purl.org/heals/eo#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:	<http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+
+Select DISTINCT ?factType ?factA ?foilType ?foilB
+Where{
+	?question feo:hasPrimaryParameter ?parameterA .
+	?question feo:hasSecondaryParameter ?parameterB .
+
+	?parameterA feo:hasCharacteristic ?factA .
+	?factA a <https://purl.org/heals/eo#Fact>.
+	?factA a ?factType .
+	?factType (rdfs:subClassOf+) feo:Characteristic .
+	Filter Not Exists{?factType rdfs:subClassOf <https://purl.org/heals/eo#knowledge> }.
+	Filter Not Exists{?s rdfs:subClassOf ?factType}.
+
+	?parameterB feo:hasCharacteristic ?foilB .
+	?foilB a <https://purl.org/heals/eo#Foil> .
+	?foilB a ?foilType.
+	?foilType (rdfs:subClassOf+) feo:Characteristic .
+	Filter Not Exists{?foilType rdfs:subClassOf <https://purl.org/heals/eo#knowledge> }.
+	Filter Not Exists{?t rdfs:subClassOf ?foilType}.
+
+}
